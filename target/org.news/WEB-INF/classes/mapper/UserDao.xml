@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+    <insert id="insertUser" parameterType="entity.User">
+          insert ignore into user(user_type,user_password,user_name,user_email,user_age)
+          values (0,#{userPassword},#{userName},#{userEmail},#{userAge})
+    </insert>
+
+    <select id="queryById" resultType="entity.User">
+          select user_id,user_type,user_password,user_name,user_email,user_age,create_time
+          from user
+          where user_name=#{userName}
+          and  user_password=#{userPassword}
+    </select>
+
+    <select id="queryByName" resultType="entity.User">
+          select user_id,user_type,user_password,user_name,user_email,user_age,create_time
+          from user
+          where user_name=#{userName}
+    </select>
+
+    <select id="queryByOnlyId" resultType="entity.User">
+          select user_id,user_type,user_password,user_name,user_email,user_age,create_time
+          from user
+          where user_id=#{userId}
+    </select>
+
+    <update id="updateUser" parameterType="entity.User">
+            update
+                user
+            set
+                 user_type=#{userType},
+                 user_password=#{userPassword},
+                 user_name=#{userName},
+                 user_email=#{userEmail},
+                 user_age=#{userAge}
+            where user_id=#{userId}
+    </update>
+
+</mapper>
