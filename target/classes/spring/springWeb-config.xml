@@ -30,6 +30,9 @@
         <!--文件的结尾-->
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <mvc:resources mapping="/img/**" location="resource/img" />
+    <mvc:resources mapping="/lib/**" location="resource/lib" />
     <!-- 扫描web相关的bean-->
     <context:component-scan base-package="web"/>
 

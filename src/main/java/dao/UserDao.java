@@ -35,4 +35,9 @@ public interface UserDao {
     * 更新用户信息
     * */
     int updateUser(User user);
+
+    /*
+    * 通过邮箱验证
+    * */
+    User queryByOnlyEmail(@Param("email") String email,@Param("userName") String userName);
 }

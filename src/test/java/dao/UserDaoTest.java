@@ -51,6 +51,11 @@ public class UserDaoTest {
         System.out.println("User:"+user);
     }
 
+    @Test
+    public void queryByOnlyEmailTest(){
+        System.out.println("User:"+userDao.queryByOnlyEmail("7574","yangxin"));
+    }
+
 
 
 }

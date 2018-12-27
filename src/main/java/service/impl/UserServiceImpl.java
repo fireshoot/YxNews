@@ -85,6 +85,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    public User selectByEmail(String email,String username) {
+        return userDao.queryByOnlyEmail(email,username);
+    }
+
     //加密
     private String getSalt(String userPassword){
         String md5=userPassword+'/'+salt;

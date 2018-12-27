@@ -26,7 +26,7 @@ public class UserServiceImplTest {
 
     @Test
     public void register() {
-        User user=new User(0,"woshinibaba","888888","8255@qq.com",18);
+        User user=new User(0,"yangxin666","888888","8255@qq.com",18);
 
         System.out.println(":"+userService.register(user));
     }

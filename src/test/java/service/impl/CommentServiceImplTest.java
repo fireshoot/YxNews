@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import service.CommentService;
 
 import static org.junit.Assert.*;
 
@@ -20,26 +21,26 @@ import static org.junit.Assert.*;
 public class CommentServiceImplTest {
 
     @Autowired
-    private CommentDao commentDao;
+    private CommentService commentService;
 
     @Test
     public void insertComment() {
         Comment comment=new Comment(2,1009,"好极32");
-       System.out.println(":"+commentDao.insertComment(comment));
+       System.out.println(":"+commentService.insertComment(comment));
     }
 
     @Test
     public void selectCommentByNew() {
-        System.out.println(":"+commentDao.queryCommentByNewId(2));
+        System.out.println(":"+commentService.selectCommentByNew(2));
     }
 
     @Test
     public void selectCommentByUser() {
-        System.out.println(":"+commentDao.queryCommentByUserId(1009));
+        System.out.println(":"+commentService.selectCommentByUser(1009));
     }
 
     @Test
     public void deleteComment() {
-        System.out.println(":"+commentDao.deleteComment(2,1009));
+        System.out.println(":"+commentService.deleteComment(2,1009));
     }
 }

@@ -27,6 +27,13 @@
           where user_id=#{userId}
     </select>
 
+    <select id="queryByOnlyEmail" resultType="entity.User">
+          select user_id,user_type,user_password,user_name,user_email,user_age,create_time
+          from user
+          where user_email=#{email}
+          and user_name=#{userName}
+    </select>
+
     <update id="updateUser" parameterType="entity.User">
             update
                 user

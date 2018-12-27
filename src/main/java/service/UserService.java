@@ -31,4 +31,8 @@ public interface UserService {
     * */
     ResgisterState updateUser(User user);
 
+    /*
+    * 通过邮箱验证用户
+    * */
+    User selectByEmail(String email,String username);
 }
