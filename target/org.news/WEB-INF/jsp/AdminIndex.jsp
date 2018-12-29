@@ -1,3 +1,4 @@
+<%@ page import="entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="common/tag.jsp" %>
 <html>
@@ -21,7 +22,19 @@
         <div class="top-menu">
             <ul class="pull-right top-menu">
                 <br>
-                <li><a class="logout" href="login.html">Logout</a></li>
+                <%
+                    User user=(User)session.getAttribute("user");
+                    if(user!=null){
+                        %>
+                         <li><a class="logout" href="http://localhost:8080/user/adminLogin.html">Logout</a></li>
+                <%
+                    }else{
+                        %>
+                <li><a class="logout" href="http://localhost:8080/user/adminLogin.html">ToLogin</a></li>
+                <%
+                    }
+                %>
+
             </ul>
         </div>
     </header>
@@ -32,10 +45,33 @@
         <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered"><a href="profile.html"><img
-                        src="${pageContext.request.contextPath}/resource/img/ui-sam.jpg" class="img-circle" width="80"></a>
+                <p class="centered"><a href="profile.html">
+                    <%
+                        if(user!=null) {/*说明已登录*/
+                    %>
+                    <img src="${pageContext.request.contextPath}/resource/img/ui-sam.jpg" class="img-circle" width="80">
+                    <%
+                        }else{
+                            %>
+                    <img src="" class="img-circle" width="80">
+                    <%
+                        }
+                        %>
+
+                </a>
                 </p>
-                <h5 class="centered">管理员</h5>
+                <%
+
+                    if(user!=null){/*说明已登录*/
+                        %>
+                    <h5 class="centered">管理员:<%=user.getUserName()%></h5>
+                <%
+                    }else{
+                        %>
+                     <h5 class="centered">请登录！！</h5>
+                <%
+                    }
+                %>
                 <li class="mt">
                     <a href="/new/adminIndex.html">
                         <i class="fa fa-dashboard"></i>
@@ -45,33 +81,24 @@
                 <li class="sub-menu dcjq-parent-li">
                     <a href="javascript:;" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
-                        <span>更新文章</span>
+                        <span>文章列表</span>
                         <span class="dcjq-icon"></span></a>
-                    <ul class="sub" style="display: none;">
-                        <li><a href="">添加文章</a></li>
-                        <li><a href="">修改文章</a></li>
-                    </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
                     <a href="javascript:;" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
-                        <span>新闻界面</span>
+                        <span>评论列表</span>
                         <span class="dcjq-icon"></span></a>
-                    <ul class="sub" style="display: none;">
-                        <li><a href="">次级</a></li>
-                        <li><a href="">次级</a></li>
-                        <li><a href="">次级</a></li>
-                    </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
                     <a href="javascript:;" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
-                        <span>功能二</span>
+                        <span>用户列表</span>
                         <span class="dcjq-icon"></span></a>
                     <ul class="sub" style="display: none;">
-                        <li><a href="">次级</a></li>
-                        <li><a href="">次级</a></li>
-                        <li><a href="">次级</a></li>
+                        <li><a href="">普通用户</a></li>
+                        <li><a href="">认证用户</a></li>
+                        <li><a href="">管理员</a></li>
                     </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
@@ -126,16 +153,16 @@
                                                     pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
                                 <td>
                                     <a href="/new/detail?newId=${news.aNew.newId}">
-                                        <button class="btn btn-primary btn-xs">
+                                        <button class="btn btn-success">
                                             <i class="fa fa-check">
                                                 详情</i></button>
                                     </a>
                                     <a href="/new/edit?newId=${news.aNew.newId}&userName=${news.userName}">
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil">修改
+                                        <button class="btn btn-primary"><i class="fa fa-pencil">修改
                                         </i></button>
                                     </a>
                                     <a href="/new/delete?newId=${news.aNew.newId}&userName=${news.userName}">
-                                        <button class="btn btn-danger btn-xs">
+                                        <button class="btn btn-danger">
                                             <i class="fa fa-trash-o ">
                                                 删除</i></button>
                                     </a>
