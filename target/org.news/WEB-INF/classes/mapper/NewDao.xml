@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.NewDao">
+    <insert id="insertNew" parameterType="entity.New">
+        insert ignore into new(category_id,user_id,title,content,key_words)
+        values(#{categoryId},#{userId},#{title},#{content},#{keyWords})
+    </insert>
+
+    <select id="queryByNewId" resultType="entity.New">
+        select new_id,category_id,user_id,title,content,create_time,key_words
+        from new
+        where
+        new_id=#{newId}
+    </select>
+
+    <select id="queryByNewName" resultType="entity.New">
+        select new_id,category_id,user_id,title,content,create_time,key_words
+        from new
+        where
+        title=#{title}
+    </select>
+
+    <select id="queryByCategoryId" resultType="entity.New">
+        select new_id,category_id,user_id,title,content,create_time,key_words
+        from new
+        where category_id=#{categoryId}
+    </select>
+
+    <select id="queryByUserId" resultType="entity.New">
+        select new_id,category_id,user_id,title,content,create_time,key_words
+        from new
+        where user_id=#{userId}
+    </select>
+
+    <select id="queryAllNews" resultType="dto.NewsData">
+        select n.new_id "aNew.new_id",
+        n.category_id "aNew.category_id",
+        n.user_id "aNew.user_id",
+        n.title "aNew.title",
+        n.content "aNew.content",
+        n.create_time "aNew.create_time",
+        n.key_words "aNew.key_words",
+        category_name "typeName",
+        u.user_name
+        from new n,user u,category cate
+        where n.user_id=u.user_id
+        and n.category_id=cate.category_id
+        order by cate.category_id desc
+    </select>
+
+    <delete id="deleteNew">
+        delete
+        from  new
+        where new_id=#{newId}
+    </delete>
+
+    <update id="updateNew" parameterType="entity.New">
+        update new
+        set
+            category_id=#{categoryId},
+            user_id=#{userId},
+            title=#{title},
+            content=#{content},
+            key_words=#{keyWords}
+        where new_id=#{newId}
+
+    </update>
+</mapper>

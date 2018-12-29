@@ -1,0 +1,229 @@
+.center {
+
+    width: 358px;
+    float: left;
+    text-align: left;
+
+}
+
+html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, span, section, header, footer, nav, article, aside, fieldset, textarea, dl, dt, dd, blockquote, ul, ol {
+
+    margin: 0 0;
+    padding: 0 0;
+
+}
+
+* {
+
+    padding: 0;
+    margin: 0;
+}
+
+.right {
+
+    width: 358px;
+    float: right;
+    text-align: left;
+
+}
+
+html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, span, section, header, footer, nav, article, aside, fieldset, textarea, dl, dt, dd, blockquote, ul, ol {
+
+    margin: 0 0;
+    padding: 0 0;
+
+}
+
+.bar02 {
+
+    width: 348px;
+    height: 22px;
+    background: url(http://www.stnn.cc/images/160401/16gb_bg05.gif) top left no-repeat;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 6px;
+    font-size: 14px;
+    font-weight: bolder;
+
+}
+
+.font_red1 {
+
+    color: #c7161c;
+
+}
+
+html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, span, section, header, footer, nav, article, aside, fieldset, textarea, dl, dt, dd, blockquote, ul, ol {
+
+    margin: 0 0;
+    margin-bottom: 0px;
+    padding: 0 0;
+    padding-top: 0px;
+    padding-left: 0px;
+
+}
+
+.font_red1 a:link, .font_red1 a:visited {
+
+    color: #c7161c;
+    text-decoration: none;
+
+}
+
+a:link, a:visited {
+
+    color: #000000;
+    text-decoration: none;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: #0B3B8C;
+
+}
+
+html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, span, section, header, footer, nav, article, aside, fieldset, textarea, dl, dt, dd, blockquote, ul, ol {
+
+    margin: 0 0;
+    padding: 0 0;
+
+}
+
+ol, ul {
+
+    list-style: none;
+
+}
+
+html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, span, section, header, footer, nav, article, aside, fieldset, textarea, dl, dt, dd, blockquote, ul, ol {
+
+    margin: 0 0;
+    padding: 0 0;
+
+}
+
+li {
+
+    list-style: none;
+    line-height: 150%;
+
+}
+
+a:link, a:visited {
+
+    color: #000000;
+    text-decoration: none;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: #0B3B8C;
+
+}
+
+html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, span, section, header, footer, nav, article, aside, fieldset, textarea, dl, dt, dd, blockquote, ul, ol {
+
+    margin: 0 0;
+    padding: 0 0;
+
+}
+{
+
+    background: url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat;
+    padding-left: 14px;
+    line-height: 26px;
+
+}
+li {
+
+    list-style: none;
+    line-height: 150%;
+
+}
+li {
+
+    list-style-type: none;
+
+}
+
+.cnt {
+    width: 996px;
+    margin-left: 100px;
+    background: #FFFFFF;
+
+}
+
+.left {
+
+    width: 220px;
+    float: left;
+    margin-right: 15px;
+    text-align: left;
+    display: inline;
+
+}
+
+.top {
+
+    width: 966px;
+    height: 90px;
+
+}
+{
+
+    float: left;
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+a:link, a:visited {
+
+    color: #000000;
+    text-decoration: none;
+
+}
+img {
+
+    border: 0px;
+    line-height: 0px;
+
+}
+img {
+
+    vertical-align: top;
+    border-width: 0;
+
+}
+.clear {
+
+    clear: both;
+    font-size: 1px;
+    visibility: hidden;
+    width: 1px;
+    line-height: 0px;
+
+}
+.navigation {
+
+    width: 966px;
+    background: url(http://www.stnn.cc/images/160401/16gb_bg02.gif) top left no-repeat #FFFFFF;
+    font-size: 18px;
+    font-family: "Microsoft YaHei UI";
+
+}
+.font_blue {
+
+    color: #172551;
+
+}
+.font_blue a:link, .font_blue a:visited {
+
+    color: #172551;
+    text-decoration: none;
+
+}

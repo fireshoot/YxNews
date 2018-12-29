@@ -1,6 +1,7 @@
 package web;
 
 import dto.*;
+import entity.Comment;
 import entity.New;
 import entity.User;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import service.CommentService;
 import service.NewService;
 import service.UserService;
 
@@ -33,6 +35,9 @@ public class NewController {
     private NewService newService;
 
     @Autowired
+    private CommentService commentService;
+
+    @Autowired
     private UserService userService;
 
     @RequestMapping(value = "/adminIndex.html")
@@ -54,6 +59,18 @@ public class NewController {
     @RequestMapping(value = "/editor.html")
     public String editor(){
         return "editor";
+    }
+
+
+    @RequestMapping("/detail")
+    public String detail(long newId,Model model){
+        NewDetail newsData=newService.selectNew(newId);
+        List<CommentData> list = commentService.selectCommentByNew(newId);
+        logger.info("************新闻详细信息的新闻数据***************"+newsData);
+        logger.info("************新闻详细信息的评论数据***************"+list);
+        model.addAttribute("detaildata",newsData);
+        model.addAttribute("commentlist",list);
+        return "newsdetail";
     }
 
 
@@ -154,8 +171,6 @@ public class NewController {
             model.addAttribute("updateResult",newNewsResult);
             return "editNews";
         }
-
-
     }
 
 

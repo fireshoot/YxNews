@@ -1,5 +1,6 @@
 package dao;
 
+import dto.CommentData;
 import entity.Comment;
 import org.apache.ibatis.annotations.Param;
 
@@ -19,7 +20,7 @@ public interface CommentDao {
     /*
     * 根据新闻获取评论
     * */
-    List<Comment> queryCommentByNewId(@Param("newId") long newId);
+    List<CommentData> queryCommentByNewId(@Param("newId") long newId);
 
     /*
     * 显示用户参与的评论

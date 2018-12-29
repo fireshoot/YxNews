@@ -121,10 +121,15 @@
                                 <td class="hidden-phone">${news.typeName}</td>
                                 <td>${news.userName}</td>
                                 <td>${news.aNew.title}</td>
-                                <td id="desc">${news.aNew.content}</td>
+                                <td id="desc">${news.aNew.keyWords}"</td>
                                 <td><fmt:formatDate value="${news.aNew.createTime}"
                                                     pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
                                 <td>
+                                    <a href="/new/detail?newId=${news.aNew.newId}">
+                                        <button class="btn btn-primary btn-xs">
+                                            <i class="fa fa-check">
+                                                详情</i></button>
+                                    </a>
                                     <a href="/new/edit?newId=${news.aNew.newId}&userName=${news.userName}">
                                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil">修改
                                         </i></button>
@@ -134,6 +139,7 @@
                                             <i class="fa fa-trash-o ">
                                                 删除</i></button>
                                     </a>
+
                                 </td>
                             </tr>
                         </c:forEach>
@@ -192,11 +198,15 @@ ${result.data}
         TaskList.initTaskWidget();
     });
 
-    var desc =document.getElementById('desc').innerHTML;
-    var text=desc.toString().substring(0,20)+"......";
-    var desc1 =document.getElementById('desc');
+    function detail(id) {
+        location.href = "/new/delete?newId=" + id;
+    }
 
-    desc1.innerHTML=text;
+    var desc = document.getElementById('desc').innerHTML;
+    var text = desc.toString().substring(0, 20) + "......";
+    var desc1 = document.getElementById('desc');
+
+    desc1.innerHTML = text;
 
 
     /*

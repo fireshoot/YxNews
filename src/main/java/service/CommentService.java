@@ -1,5 +1,6 @@
 package service;
 
+import dto.CommentData;
 import entity.Comment;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface CommentService {
     /*
     * 获取文章下的评论
     * */
-    List<Comment> selectCommentByNew(long newId);
+    List<CommentData> selectCommentByNew(long newId);
 
     /*
      * 获取用户参与的评论

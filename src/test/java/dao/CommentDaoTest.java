@@ -1,5 +1,6 @@
 package dao;
 
+import dto.CommentData;
 import entity.Comment;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,7 +31,7 @@ public class CommentDaoTest {
 
     @Test
     public void queryCommentByNewIdTest(){
-        List<Comment> list=commentDao.queryCommentByNewId(2);
+        List<CommentData> list=commentDao.queryCommentByNewId(2);
         System.out.println("List<Comment>:"+list);
     }
 

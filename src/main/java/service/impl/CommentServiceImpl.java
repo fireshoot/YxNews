@@ -1,6 +1,7 @@
 package service.impl;
 
 import dao.CommentDao;
+import dto.CommentData;
 import entity.Comment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +34,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> selectCommentByNew(long newId) {
+    public List<CommentData> selectCommentByNew(long newId) {
         return commentDao.queryCommentByNewId(newId);
     }
 
