@@ -1,5 +1,6 @@
 package web;
 
+import dto.NewList;
 import dto.NewsResult;
 import dto.ResgisterState;
 import entity.User;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import service.UserService;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 /**
@@ -28,6 +30,12 @@ import java.util.Date;
 public class UserController {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
 
+ //   request. setCharacterEncoding("UTF-8")
+
+    @Autowired
+    private HttpSession session;
+
+
     @Autowired
     private UserService userService;
 
@@ -39,12 +47,6 @@ public class UserController {
     @RequestMapping(value = "/index.html")
     public  String index(){
         return "index";
-    }
-
-
-    @RequestMapping(value = "/adminIndex.html")
-    public String adminIndex(){
-        return "AdminIndex";
     }
 
     @RequestMapping(value = "/register.html")
@@ -73,6 +75,8 @@ public class UserController {
             //说明有用户，表示用户或者密码正确
             NewsResult<User> result= new NewsResult<User>(true,user);
             model.addAttribute("result",result);
+            model.addAttribute("customer", user);
+            session.setAttribute("user",user);
             return "index";
         }else{
             NewsResult<User> result= new NewsResult<User>(false,"用户名或者密码错误");
@@ -90,17 +94,18 @@ public class UserController {
 
         if(existUser!=null){//说明昵称已经存在
             NewsResult<User> register=new NewsResult<User>(false,"用户名已经存在");
-            model.addAttribute("register",register);
+            model.addAttribute("result",register);
             return "register";
         }else {
             ResgisterState res=userService.register(user);
             if (res.getState()!=1){//表示不成功
                 NewsResult<User> register=new NewsResult<User>(false,res.getStateInfo());
-                model.addAttribute("register",register);
+                model.addAttribute("result",register);
                 return "register";
             }else{
                 NewsResult<User> register=new NewsResult<User>(true,user);
-                model.addAttribute("register",register);
+                model.addAttribute("result",register);
+                session.setAttribute("user",user);
                 return "login";
             }
         }
@@ -117,16 +122,16 @@ public class UserController {
             ResgisterState state=userService.updateUser(user);
             if(state.getState()!=1){
                 NewsResult<User> forget=new NewsResult<User>(false,state.getStateInfo());
-                model.addAttribute("forget",forget);
+                model.addAttribute("result",forget);
                 return "ForgetPassword";
             }else{
                 NewsResult<User> forget=new NewsResult<User>(true,user);
-                model.addAttribute("forget",forget);
+                model.addAttribute("result",forget);
                 return "login";
             }
         }else{
             NewsResult<User> forget=new NewsResult<User>(false,"不存在此用户");
-            model.addAttribute("forget",forget);
+            model.addAttribute("result",forget);
             return "ForgetPassword";
         }
     }
@@ -136,12 +141,19 @@ public class UserController {
         User user=userService.login(username,password);
         if(user!=null&&user.getUserType()==2){
             NewsResult<User> result= new NewsResult<User>(true,user);
-            model.addAttribute("result",result);
-            return "AdminIndex";
+            model.addAttribute("adminresult",result);
+            model.addAttribute("customer", user);
+            session.setAttribute("user",user);
+            return "redirect:/new/adminIndex.html";
         }else{
             NewsResult<User> result= new NewsResult<User>(false,"用户名或者密码错误或者你不是管理员");
-            model.addAttribute("result",result);
+            model.addAttribute("adminresult",result);
             return "AdminLogin";
         }
     }
+
+
+
+
+
 }

@@ -13,29 +13,35 @@
         <div class="row mt">
             <div class="col-lg-12">
                 <div class="form-panel">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i>用户注册</h4>
                     <label class="col-sm-2 col-sm-2 control-label" style="color: red">
-                        ${register.errMes}</label>
+                        ${result.errMes}</label>
+                    <h4 class="mb"><i class="fa fa-angle-right"></i>用户注册</h4>
                     <form class="form-horizontal style-form" method="post" onsubmit="checkAll()"
                           action="${pageContext.request.contextPath}/user/toregister">
+
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">用户名(昵称)</label>
                             <div class="col-sm-10">
-                                <input type="text" id="username" name="userName" onblur="checkname()" class="form-control">
+                                <input class="form-control" id="username" name="userName"
+                                       onblur="checkname()" <%--id="focusedInput"--%> type="text">
+                                <span id="tip_name" style="color: rebeccapurple"></span>
                             </div>
-                            <span id="tip_name" style="color: rebeccapurple"></span>
+
                         </div>
+
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">密 码</label>
                             <div class="col-sm-10">
-                                <input type="password" id="password" name="userPassword" onblur="checkpsd1()" class="form-control" placeholder="">
+                                <input type="password" id="password" name="userPassword" onblur="checkpsd1()"
+                                       class="form-control" placeholder="">
                                 <span class="help-block" id="tip_password">密码长度6-25位</span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">确认密码</label>
                             <div class="col-sm-10">
-                                <input type="password" id="password1" name="aginpassword" onblur="checkpsd2()" class="form-control" placeholder="">
+                                <input type="password" id="password1" name="aginpassword" onblur="checkpsd2()"
+                                       class="form-control" placeholder="">
                                 <span class="help-block" id="tip_password1">两次密码要相同</span>
                             </div>
                         </div>
@@ -43,9 +49,11 @@
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">邮 箱</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="email" name="userEmail"  onblur="checkemail()" <%--id="focusedInput"--%> type="text">
+                                <input class="form-control" id="email" name="userEmail"
+                                       onblur="checkemail()" <%--id="focusedInput"--%> type="text">
+                                <span id="tip_email" style="color: rebeccapurple"></span>
                             </div>
-                            <span id="tip_email" style="color: rebeccapurple"></span>
+
                         </div>
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">账户类型(0:普通用户)</label>
@@ -58,9 +66,11 @@
                         <div class="form-group">
                             <label class="col-sm-2 col-sm-2 control-label">年 龄</label>
                             <div class="col-sm-10">
-                                <input type="text" id="age" onblur="Age()" name="userAge" class="form-control" placeholder="0-100">
+                                <input type="text" id="age" onblur="Age()" name="userAge" class="form-control"
+                                       placeholder="0-100">
+                                <span id="tip_age" style="color: rebeccapurple"></span>
                             </div>
-                            <span id="tip_age" style="color: rebeccapurple"></span>
+
                         </div>
                         <br>
                         <button type="submit" class="btn btn-theme">注 册</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,14 +102,15 @@
 <script type="text/javascript"
         src="${pageContext.request.contextPath}/resource/lib/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
 <script src="${pageContext.request.contextPath}/resource/lib/form-component.js"></script>
-<script src="${pageContext.request.contextPath}/resource/script/user.js" type="text/javascript"  charset="UTF-8"></script>
+<script src="${pageContext.request.contextPath}/resource/script/user.js" type="text/javascript"
+        charset="UTF-8"></script>
 
 <script type="text/javascript">
     $.backstretch("${pageContext.request.contextPath}/resource/img/ny.jpg", {
         speed: 500
     });
 
-    $(function(){
+    $(function () {
         user.Login.Register();
     });
 

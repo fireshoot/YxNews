@@ -5,6 +5,7 @@ import dao.UserDao;
 import dto.InsertNewState;
 import dto.NewDetail;
 import dto.NewList;
+import dto.NewsData;
 import entity.New;
 import entity.User;
 import enums.InsertNewEnums;
@@ -92,7 +93,7 @@ public class NewServiceImpl implements NewService {
     }
 
     @Override
-    public List<New> selectAllNews() {
+    public List<NewsData> selectAllNews() {
         return newDao.queryAllNews();
     }
 

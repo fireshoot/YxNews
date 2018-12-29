@@ -33,6 +33,7 @@
 
     <mvc:resources mapping="/img/**" location="resource/img" />
     <mvc:resources mapping="/lib/**" location="resource/lib" />
+    <mvc:resources mapping="/ueditor/**" location="resource/ueditor" />
     <!-- 扫描web相关的bean-->
     <context:component-scan base-package="web"/>
 

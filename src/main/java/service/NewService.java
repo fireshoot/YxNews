@@ -3,6 +3,7 @@ package service;
 import dto.InsertNewState;
 import dto.NewDetail;
 import dto.NewList;
+import dto.NewsData;
 import entity.New;
 import entity.User;
 
@@ -37,7 +38,7 @@ public interface NewService {
     /*
     * 管理员查看所有发表新闻
     * */
-    List<New> selectAllNews();
+    List<NewsData> selectAllNews();
 
     /*
     * 删除指定新闻

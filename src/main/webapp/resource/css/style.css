@@ -397,9 +397,9 @@ ul.sidebar-menu li a.active i {
 
 /* MAIN CONTENT CONFIGURATION */
 #main-content {
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 0px;
+
 }
 
 .header, .footer {
@@ -1080,8 +1080,8 @@ PANELS CONFIGURATIONS
 .content-panel {
 	background: #ffffff;
 	box-shadow: 0px 3px 2px #aab2bd;
-	padding-top: 15px;
-	padding-bottom: 5px;
+	padding-top: 100px;
+	padding-bottom: 400px;
 }
 .content-panel h4 {
 	margin-left: 10px;
@@ -2058,6 +2058,15 @@ profile-text p {
 	background: #e0e1e7;
 }
 
+.nav {
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
 .nav-tabs a {
 	color: #2f2f2f;
 }
@@ -2605,7 +2614,7 @@ ul.inbox-pagination li {
     width: 100%;
     display: inline-block;
     position: relative;
-    margin-top: 20px;
+    margin-top: 90px;
 }
 
 
@@ -2619,8 +2628,8 @@ ul.inbox-pagination li {
     top: 7px;
 }
 
+
 .compose-mail input, .compose-mail input:focus {
-    border:none;
     padding: 0;
     width: 80%;
     float: left;
@@ -2652,7 +2661,7 @@ ul.inbox-pagination li {
 
 .compose-btn {
     float: left;
-    margin-top: 6px;
+    margin-top: 100px;
 }
 
 .mail-header h4 {

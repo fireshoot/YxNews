@@ -7,6 +7,8 @@
 </head>
 <body>
 ${result.toString()}
+<%=session.getAttribute("user")
+%>
 <div>
     <div class="cnt">
         <ul>

@@ -34,10 +34,20 @@
         where user_id=#{userId}
     </select>
 
-    <select id="queryAllNews" resultType="entity.New">
-        select new_id,category_id,user_id,title,content,create_time,key_words
-        from new
-        order by category_id desc
+    <select id="queryAllNews" resultType="dto.NewsData">
+        select n.new_id "aNew.new_id",
+        n.category_id "aNew.category_id",
+        n.user_id "aNew.user_id",
+        n.title "aNew.title",
+        n.content "aNew.content",
+        n.create_time "aNew.create_time",
+        n.key_words "aNew.key_words",
+        category_name "typeName",
+        u.user_name
+        from new n,user u,category cate
+        where n.user_id=u.user_id
+        and n.category_id=cate.category_id
+        order by cate.category_id desc
     </select>
 
     <delete id="deleteNew">

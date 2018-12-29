@@ -1,5 +1,6 @@
 package dao;
 
+import dto.NewsData;
 import entity.New;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -73,7 +74,7 @@ public class NewDaoTest {
 
     @Test
     public void queryAllNewsTest(){
-        List<New> list=newDao.queryAllNews();
+        List<NewsData> list=newDao.queryAllNews();
         System.out.println("List<New>:"+list);
     }
 

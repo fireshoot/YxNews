@@ -1,5 +1,6 @@
 package dao;
 
+import dto.NewsData;
 import entity.New;
 import org.apache.ibatis.annotations.Param;
 
@@ -39,7 +40,7 @@ public interface NewDao {
     /*
      * 后台管理员查看所有发表的新闻，并对其操作
      * */
-    List<New> queryAllNews();
+    List<NewsData> queryAllNews();
 
     /*
     * 删除指定Id的新闻条目
