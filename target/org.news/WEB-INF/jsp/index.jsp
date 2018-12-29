@@ -6,9 +6,6 @@
     <%@include file="common/header.jsp" %>
 </head>
 <body>
-${result.toString()}
-<%=session.getAttribute("user")
-%>
 <div>
     <div class="cnt">
         <ul>
@@ -22,54 +19,71 @@ ${result.toString()}
     </div>
     <div class="cnt">
         <div class="left">
-            <div class="bar02 font_red1"><a href="http://news.stnn.cc/hongkong/">热点新闻</a></div>
-            <ul style="font-size:14px">
-                <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
-                    <a target="_blank" href="http://news.stnn.cc/hongkong/2018/1226/603039.shtml"
-                       title="UGL事件|丁煌:律政司做法妥当 郑若骅回应充分" class="title">UGL事件|丁煌:律政司做法妥当 郑若骅回应充分</a></li>
-            </ul>
+            <div class="bar02 font_red1"><a href="">热点新闻</a></div>
+            <c:forEach var="hot" items="${list.HOT_NEWS}">
+                <ul style="font-size:14px">
+                    <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif)
+                    top left no-repeat; padding-left:14px; line-height:26px">
+                        <a target="_blank" href="/new/detail?newId=${hot.newId}" title="${hot.keyWords}|${hot.title}"
+                           class="title">${hot.keyWords}|${hot.title}</a></li>
+                </ul>
+            </c:forEach>
 
-            <div class="bar02 font_red1" style="margin-top:15px"><a href="http://news.stnn.cc/china/">娱乐新闻</a></div>
-            <ul style="font-size:14px">
-                <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
-                    <a target="_blank" href="http://news.stnn.cc/china/2018/1226/603118.shtml"
-                       title="国家网信办:金融信息服务提供者不得散布虚假信息"
-                       class="title">国家网信办:金融信息服务提供者不得散布虚假信息</a></li>
-            </ul>
+            <div class="bar02 font_red1" style="margin-top:15px"><a href="">娱乐新闻</a></div>
+            <c:forEach var="enter" items="${list.ENTERTAINMENT_NEWS}">
+                <ul style="font-size:14px">
+                    <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
+                        <a target="_blank" href="/new/detail?newId=${enter.newId}"
+                           title="${enter.keyWords}:${enter.title}"
+                           class="title">${enter.keyWords}:${enter.title}</a></li>
+                </ul>
+            </c:forEach>
 
-            <div class="bar02 font_red1" style="margin-top:15px"><a href="http://news.stnn.cc/fzsjxw/">科技新闻</a></div>
-            <ul style="font-size:14px">
-                <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
-                    <a target="_blank" href="http://news.stnn.cc/fzsjxw/2018/1226/603093.shtml"
-                       title="女子偷手机得手后却踢醒对方，警察都忍不住笑……"
-                       class="title">女子偷手机得手后却踢醒对方，警察都忍不住笑……</a></li>
-            </ul>
+            <div class="bar02 font_red1" style="margin-top:15px"><a href="">科技新闻</a></div>
+            <c:forEach var="tech" items="${list.TECH_NEWS}">
+                <ul style="font-size:14px">
+                    <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat;
+                     padding-left:14px; line-height:26px">
+                        <a target="_blank" href="/new/detail?newId=${tech.newId}"
+                           title="${tech.keyWords}|${tech.title}"
+                           class="title">${tech.keyWords}|${tech.title}</a></li>
+                </ul>
+            </c:forEach>
         </div>
         <div class="right">
-            <div class="bar02 font_red1"><a href="http://news.stnn.cc/hk_taiwan/">军事新闻</a></div>
-            <ul style="font-size:14px">
-                <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
-                    <a target="_blank" href="http://news.stnn.cc/hk_taiwan/2018/1226/603121.shtml"
-                       title="余莓莓泪骂蔡英文：为什么这样对我们？节目激动哭崩" class="title">
-                        余莓莓泪骂蔡英文：为什么这样对我们？节目激动哭崩</a></li>
-            </ul>
+            <div class="bar02 font_red1"><a href="">军事新闻</a></div>
+            <c:forEach var="mili" items="${list.MILITARY}">
+                <ul style="font-size:14px">
+                    <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
+                        <a target="_blank" href="/new/detail?newId=${mili.newId}"
+                           title="${mili.keyWords}|${mili.title}" class="title">
+                                ${mili.keyWords}|${mili.title}</a></li>
+                </ul>
+            </c:forEach>
 
 
-            <div class="bar02 font_red1" style="margin-top:15px"><a href="http://news.stnn.cc/guoji/">体育新闻</a></div>
-            <ul style="font-size:14px">
-                <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
-                    <a target="_blank" href="http://news.stnn.cc/guoji/2018/1226/603113.shtml"
-                       title="财长姆努钦稳定市场不力，特朗普不满与日俱增"
-                       class="title">财长姆努钦稳定市场不力，特朗普不满与日俱增</a></li>
-            </ul>
+            <div class="bar02 font_red1" style="margin-top:15px"><a href="">体育新闻</a></div>
+            <c:forEach var="sport" items="${list.SPORT_NEWS}">
+                <ul style="font-size:14px">
+                    <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat;
+                padding-left:14px; line-height:26px">
+                        <a target="_blank" href="/new/detail?newId=${sport.newId}"
+                           title="${sport.keyWords}|${sport.title}"
+                           class="title">${sport.keyWords}|${sport.title}</a></li>
+                </ul>
+            </c:forEach>
 
-            <div class="bar02 font_red1" style="margin-top:15px"><a href="http://news.stnn.cc/19/">国际新闻</a></div>
-            <ul style="font-size:14px">
-                <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
-                    <a target="_blank" href="http://news.stnn.cc/19/2018/1226/602992.shtml"
-                       title="思想纵横：改革开放是党的主张与人民要求的统一"
-                       class="title">思想纵横：改革开放是党的主张与人民要求的统一</a></li>
-            </ul>
+            <div class="bar02 font_red1" style="margin-top:15px"><a href="">国际新闻</a></div>
+            <c:forEach var="world" items="${list.WORLD_NEWS}">
+                <ul style="font-size:14px">
+                    <li style="background:url(http://www.stnn.cc/images/160401/16gb_bg06.gif) top left no-repeat; padding-left:14px; line-height:26px">
+                        <a target="_blank" href="/new/detail?newId=${world.newId}"
+                           title="${world.keyWords}|${world.title}"
+                           class="title">
+                            ${world.keyWords}|${world.title}
+                        </a></li>
+                </ul>
+            </c:forEach>
         </div>
     </div>
 

@@ -36,6 +36,8 @@ public class NewList {
      * */
     private List<New> SPORT_NEWS;
 
+
+
     @Override
     public String toString() {
         return "NewList{" +
@@ -46,6 +48,31 @@ public class NewList {
                 ", SPORT_NEWS=" + SPORT_NEWS +
                 ", WORLD_NEWS=" + WORLD_NEWS +
                 '}';
+    }
+
+
+    public List<New> getHOT_NEWS() {
+        return HOT_NEWS;
+    }
+
+    public List<New> getENTERTAINMENT_NEWS() {
+        return ENTERTAINMENT_NEWS;
+    }
+
+    public List<New> getTECH_NEWS() {
+        return TECH_NEWS;
+    }
+
+    public List<New> getMILITARY() {
+        return MILITARY;
+    }
+
+    public List<New> getSPORT_NEWS() {
+        return SPORT_NEWS;
+    }
+
+    public List<New> getWORLD_NEWS() {
+        return WORLD_NEWS;
     }
 
     /*

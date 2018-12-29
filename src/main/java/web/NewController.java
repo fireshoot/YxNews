@@ -17,6 +17,7 @@ import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -54,6 +55,35 @@ public class NewController {
         List<NewsData> list=newService.selectAllNews();
         model.addAttribute("list",list);
         return "AdminIndex";
+    }
+
+    @RequestMapping("/submitcomment")
+    public String submitComment(String commentContent,long newId,Model model){
+        logger.info("*************提交评论获取内容："+commentContent+newId);
+
+        User user= (User) session.getAttribute("user");
+
+        logger.info("**************目前是否登录："+user);
+
+        if(user!=null){//目前已经登录
+            Comment comment=new Comment();
+            comment.setContent(commentContent);
+            comment.setNewId(newId);
+            comment.setUserId(user.getUserId());
+            comment.setCreateTime(new Date());
+            int i = commentService.insertComment(comment);
+            if(i<=0){//插入失败
+                NewsResult<Comment> result=new NewsResult<Comment>(false,"网络忙");
+                model.addAttribute("insertComment",result);
+            }else{
+                NewsResult<Comment> result=new NewsResult<Comment>(true,"操作成功");
+                model.addAttribute("insertComment",result);
+            }
+        }else{//表示未登录
+            NewsResult<Comment> result=new NewsResult<Comment>(false,"未登录");
+            model.addAttribute("insertComment",result);
+        }
+        return "redirect:/new/detail?newId="+newId;
     }
 
     @RequestMapping(value = "/editor.html")

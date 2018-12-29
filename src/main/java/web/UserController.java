@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import service.NewService;
 import service.UserService;
 
 import javax.servlet.http.HttpSession;
@@ -35,6 +36,9 @@ public class UserController {
     @Autowired
     private HttpSession session;
 
+    @Autowired
+    private NewService newService;
+
 
     @Autowired
     private UserService userService;
@@ -45,7 +49,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/index.html")
-    public  String index(){
+    public  String index(Model model ){
+        NewList newList = newService.selectIndexNew();
+        model.addAttribute("list",newList);
         return "index";
     }
 
@@ -77,7 +83,7 @@ public class UserController {
             model.addAttribute("result",result);
             model.addAttribute("customer", user);
             session.setAttribute("user",user);
-            return "index";
+            return "redirect:/user/index.html";
         }else{
             NewsResult<User> result= new NewsResult<User>(false,"用户名或者密码错误");
             model.addAttribute("result",result);

@@ -5,6 +5,11 @@
     <title>Title</title>
     <%@include file="common/header.jsp" %>
     <style>
+
+        .comment-short{
+            margin-top: 50px;
+        }
+
         .LEFT {
 
             width: 890px;
@@ -21,7 +26,8 @@
             color: #333;
             margin-top: 8px;
         }
-        p{
+
+        p {
             font-size: 40px;
             line-height: 1.5;
             margin-bottom: 25px;
@@ -95,7 +101,11 @@
 
             position: relative;
             padding-left: 68px;
-
+            padding-bottom: 30px;
+        }
+        .box-content box-login{
+            margin-right: 12px;
+            height: 104px;
         }
 
         .center-click .my-avatar, .user-click .comment-short .common-avatar, .user-click .comment-username, .user-click .reply-user-nick {
@@ -178,7 +188,7 @@
         .box-textarea {
 
             height: 100%;
-            width: 100%;
+            width: 70%;
             display: block;
             border: none;
             font-size: 14px;
@@ -389,7 +399,8 @@
             word-wrap: break-word;
 
         }
-        .comment_box{
+
+        .comment_box {
             margin-top: 100px;
             margin-bottom: 50px;
             margin-left: 85px;
@@ -423,26 +434,17 @@
                         <div class="common-avatar my-avatar J_userCenter"><img
                                 src="${pageContext.request.contextPath}/resource/img/friends/fr-08.jpg"
                                 width="100%" height="100%"></div>
+                        <div>${insertComment.errMes}</div>
                         <div class="box-content box-login">
-                            <div class="box-textarea-block"><textarea class="box-textarea J_Textarea" id="J_Textarea"
-                                                                      placeholder="说两句吧..."></textarea></div>
-                            <ul class="box-images" id="J_Images">
-                                <li class="box-images-add" id="J_AddImage">+
-                                    <form class="box-upload-form" action=""
-                                          method="post" enctype="multipart/form-data" target="J_UploadIframe"><input
-                                            class="box-upload-file J_Upload" type="file" name="picture"
-                                            accept="image/*"> <input name="type" type="hidden" value="1"> <input
-                                            name="format" type="hidden" value="SCRIPT"> <input name="_method"
-                                                                                               type="hidden"
-                                                                                               value="put"> <input
-                                            name="code" type="hidden" value="0"> <input name="source" type="hidden"
-                                                                                        value="1"> <input
-                                            name="callback" type="hidden" value="parent.upLoadImg">
-                                        <div class="J_UploadParams"></div>
-                                    </form>
-                                </li>
+                            <form action="/new/submitcomment" method="post">
+                                <div class="box-textarea-block">
+                                <textarea class="box-textarea J_Textarea" name="commentContent" id="J_Textarea"
+                                          placeholder="说两句吧..."></textarea></div>
+                                <input name="newId" value="${detaildata.aNew.newId}" style="display: none">
+                                <button class="btn btn-danger btn-xs" type="submit">提交评论</button>
+                            </form>
+                            </li>
                             </ul>
-                            <button class="btn btn-danger btn-xs">评论</button>
                         </div>
                     </div>
                     <div class="comment-short" id="J_Short">
@@ -462,10 +464,11 @@
                                             width="100%" height="100%"></div>
                                     <div class="comment-block" id="J_CommentBlock6484404667763062250"><p
                                             class="comment-user"><span class="comment-username J_User"
-                                                                       data-userid="692770537"> ${comment.username}</span> <span
-                                            class="comment-time">${comment.comment.createTime}</span></p>
+                                                                       data-userid="692770537"> ${comment.username}</span>
+                                        <span
+                                                class="comment-time">${comment.comment.createTime}</span></p>
                                         <div class="comment-content J_CommentContent">
-                                            ${comment.comment.content}
+                                                ${comment.comment.content}
                                         </div>
                                     </div>
                                     <div class="J_Report comment-report" id=""
