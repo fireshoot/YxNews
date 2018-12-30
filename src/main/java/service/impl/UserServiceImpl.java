@@ -8,6 +8,7 @@ import entity.User;
 import enums.UserRegisterEnums;
 import exception.UserException;
 import exception.UserExistException;
+import exception.UserInsertException;
 import exception.UserMisssException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,32 +35,38 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RedisDao redisDao;
 
+    /*
+    * 优化：1.添加事务注解和事务的配置，当注册异常时回滚和正常时的提交。
+    *       2.自定义异常类，出现相应的错误，抛出异常回滚。
+    * */
     @Override
     @Transactional
     public ResgisterState register(User user)
-            throws UserException,UserExistException,UserMisssException{
+            throws UserException,UserExistException,UserMisssException, UserInsertException {
         String password=user.getUserPassword();
         user.setUserPassword(getSalt(password));
         try{
-            //User u=userDao.queryByName(user.getUserName());
-            //从Redis中查询是否被注册
             User redisUser=redisDao.getUser(user.getUserName());
             if(redisUser==null){
                 String res=redisDao.setUser(user);
+                logger.info("############yangxin专用日志########### 注册功能模块的插入Redis数据返回值："+res);
                 int insertCount=userDao.insertUser(user);
                 if(insertCount<=0){
-                    return new ResgisterState(user.getUserId(),UserRegisterEnums.FAIL);
+                    throw  new UserInsertException(UserRegisterEnums.FAIL.getStateInfo());
                 }else{
                     return new ResgisterState(user.getUserId(),UserRegisterEnums.SUCCESS,user);
                 }
-            }else{//如果redis中已经存在，表示此时有相同的人再注册
-                return new ResgisterState(user.getUserId(),UserRegisterEnums.RedisEXIST);
+            }else{//如果redis中已经存在，表示该用户名不能被注册
+               throw new UserExistException(UserRegisterEnums.RedisEXIST.getStateInfo());
             }
         }catch (UserExistException existException) {
-            throw existException;
+            return  new ResgisterState(user.getUserId(),UserRegisterEnums.RedisEXIST);
         }catch (UserMisssException e){
             throw e;
-        }catch (Exception e){
+        }catch (UserInsertException e){
+            logger.error(e.getMessage(),e);
+            return new ResgisterState(user.getUserId(),UserRegisterEnums.FAIL);
+        } catch (Exception e){
             logger.error(e.getMessage(),e);
             return  new ResgisterState(user.getUserId(),UserRegisterEnums.INNER_ERROR);
         }

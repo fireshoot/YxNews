@@ -34,8 +34,6 @@ import java.util.List;
 public class UserController {
     private Logger logger= LoggerFactory.getLogger(this.getClass());
 
- //   request. setCharacterEncoding("UTF-8")
-
     @Autowired
     private HttpSession session;
 
@@ -45,16 +43,20 @@ public class UserController {
     @Autowired
     private CommentService commentService;
 
-
-
     @Autowired
     private UserService userService;
 
+    /*
+    * 跳转登录页面
+    * */
     @RequestMapping(value = "/login1.html")
     public String login(){
         return "login";
     }
 
+    /*
+     * 跳转主页页面，目前弃用
+     * */
     @RequestMapping(value = "/index.html")
     public  String index(Model model ){
         NewList newList = newService.selectIndexNew();
@@ -64,22 +66,34 @@ public class UserController {
         return "NewIndex";
     }
 
+    /*
+    * 跳转到注册页面
+    * */
     @RequestMapping(value = "/register.html")
     public String register(){
         return "register";
     }
 
+    /*
+    * 跳转到找回密码
+    * */
     @RequestMapping(value = "/forgetpassword.html")
     public String forgetpassword(){
         return "ForgetPassword";
     }
 
 
+    /*
+    * 跳转到管理员登录
+    * */
     @RequestMapping(value = "/adminLogin.html")
     public String adminLogin(){
         return "AdminLogin";
     }
 
+    /*
+    * 跳转到用户中心
+    * */
     @RequestMapping(value = "/center.html")
     public String center(Model model){
         User user = (User) session.getAttribute("user");
@@ -100,33 +114,18 @@ public class UserController {
     }
 
 
-
-    @RequestMapping(value = "/login")
-    public String tologin(String username,
-                          String password,String email,Model model){
-        User user=userService.login(username,password);
-        if(user!=null){
-            //说明有用户，表示用户或者密码正确
-            NewsResult<User> result= new NewsResult<User>(true,user);
-            model.addAttribute("result",result);
-            model.addAttribute("customer", user);
-            session.setAttribute("user",user);
-            return "redirect:/user/index.html";
-        }else{
-            NewsResult<User> result= new NewsResult<User>(false,"用户名或者密码错误");
-            model.addAttribute("result",result);
-            return "login";
-        }
-    }
-
+    /*
+    * 实现注册逻辑.
+    * 1：优化，在极端时间中，同时注册相同Username(原数据库中没有)，会导致同时插入非法数据。
+    *    解决思路：使用Redis做二级缓存，注册时先要去缓存中去查找，如果有，那么已经被注册，表示不能注册。
+    *               如果没有，注册成功的时候也往redis中插入。
+    * */
     @RequestMapping(value = "/toregister")
     public String toregister(User user,Model model){
-        Date createTime=new Date();
-        user.setCreateTime(createTime);
+        user.setCreateTime(new Date());
         logger.info("############yangxin专用日志###########  注册功能模块的前台传来的注册数据："+user);
 
         User existUser=userService.selectByName(user.getUserName());
-
         if(existUser!=null){//说明昵称已经存在
             NewsResult<User> register=new NewsResult<User>(false, UserRegisterEnums.DBAEXIST.getStateInfo());
             model.addAttribute("result",register);
@@ -147,6 +146,9 @@ public class UserController {
     }
 
 
+    /*
+    * 忘记密码找回密码逻辑
+    * */
     @RequestMapping(value = "/toforgetpassword")
     public String toforgetpassword(String username,String email,String password,Model model)
     {
@@ -171,6 +173,9 @@ public class UserController {
         }
     }
 
+    /*
+    * 实现管理员登录逻辑
+    * */
     @RequestMapping(value = "/toadminLogin")
     public String toadminLogin(String username,String password,Model model){
         User user=userService.login(username,password);
@@ -188,7 +193,29 @@ public class UserController {
     }
 
 
-
+    /*
+     * 实现登录逻辑
+     *
+     * 优化：1.限制用户在多个客户端登录的限制
+     *
+     * */
+    @RequestMapping(value = "/login")
+    public String tologin(String username,
+                          String password,String email,Model model){
+        User user=userService.login(username,password);
+        if(user!=null){
+            //说明有用户，表示用户或者密码正确
+            NewsResult<User> result= new NewsResult<User>(true,user);
+            model.addAttribute("result",result);
+            model.addAttribute("customer", user);
+            session.setAttribute("user",user);
+            return "redirect:/user/index.html";
+        }else{
+            NewsResult<User> result= new NewsResult<User>(false,"用户名或者密码错误");
+            model.addAttribute("result",result);
+            return "login";
+        }
+    }
 
 
 }
