@@ -54,7 +54,7 @@ public class UserController {
     public  String index(Model model ){
         NewList newList = newService.selectIndexNew();
         model.addAttribute("list",newList);
-        return "index";
+        return "NewIndex";
     }
 
     @RequestMapping(value = "/register.html")

@@ -49,6 +49,11 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public Comment selectCommentById(long commentId) {
+        return commentDao.queryCommentById(commentId);
+    }
+
+    @Override
     public int deleteComment(long commentId, long userId) {
         Comment comment=commentDao.queryCommentById(commentId);
         if(comment!=null){

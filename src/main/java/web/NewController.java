@@ -54,16 +54,35 @@ public class NewController {
 
         List<NewsData> list=newService.selectAllNews();
         List<CommentData> commentData = commentService.selectAllComment();
-        logger.info("############yangxin专用日志###########  后台主页评论列表功能模块的评论数据："+commentData);
         model.addAttribute("Newslist",list);
         model.addAttribute("commentlist",commentData);
         return "AdminIndex";
     }
 
     @RequestMapping(value = "deletecomment")
-    public String deleteComment(long commentd, String userName, Model model){
+    public String deleteComment(long commentId, String userName, Model model){
       //  logger.info("############yangxin专用日志###########  XX功能模块的XX数据："+);
-        return "";
+        User user=userService.selectByName(userName);
+        Comment comment=commentService.selectCommentById(commentId);
+        if(user.getUserType()==2||user.getUserId()==comment.getNewId()){
+            int i = commentService.deleteComment(commentId, user.getUserId());
+            if(i<=0){
+                NewsResult<Comment> result=new NewsResult<Comment>(false,"操作失败");
+                model.addAttribute("editResult",result);
+            }else{
+                //如果不是作者本人或者是管理员那么不允许修改文章。
+                NewsResult<Comment> result=new NewsResult<Comment>(true,"操作成功");
+                model.addAttribute("editResult",result);
+            }
+        }else{
+            //如果不是作者本人或者是管理员那么不允许修改文章。
+            NewsResult<Comment> result=new NewsResult<Comment>(false,"无权限");
+            model.addAttribute("editResult",result);
+        }
+        if(user.getUserType()==2)
+            return "redirect:/new/adminIndex.html";
+        else
+            return "redirect:/user/index.html";
     }
 
     @RequestMapping("/submitcomment")
@@ -115,7 +134,6 @@ public class NewController {
 
     @RequestMapping(value = "/submitContent")
     public String toSubmit(New news,Model model){
-       logger.info(""+news+"..");
        User user=(User)session.getAttribute("user");
        if(user!=null){
            news.setUserId(user.getUserId());

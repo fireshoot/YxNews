@@ -32,6 +32,11 @@ public interface CommentService {
      * */
     List<CommentData> selectAllComment();
 
+    /*
+     * 根据ID获取评论
+     * */
+   Comment selectCommentById(long commentId);
+
 
     /*
     * 用户自己删除自己的评论

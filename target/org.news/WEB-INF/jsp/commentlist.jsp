@@ -31,7 +31,7 @@
                             <td><fmt:formatDate value="${comment.comment.createTime}"
                                                 pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
                             <td>
-                                <a href="/new/deletecomment?commentd=${comment.comment.commentId}&userName=${comment.username}">
+                                <a href="/new/deletecomment?commentId=${comment.comment.commentId}&userName=${comment.username}">
                                     <button class="btn btn-danger">
                                         <i class="fa fa-trash-o ">
                                             删除</i></button>

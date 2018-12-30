@@ -44,14 +44,15 @@ public class UserServiceImpl implements UserService {
             //User u=userDao.queryByName(user.getUserName());
             //从Redis中查询是否被注册
             User redisUser=redisDao.getUser(user.getUserName());
-            if(redisUser==null){//如果redis中已经存在，表示此时有相同的人再注册
+            if(redisUser==null){
+                String res=redisDao.setUser(user);
                 int insertCount=userDao.insertUser(user);
                 if(insertCount<=0){
                     return new ResgisterState(user.getUserId(),UserRegisterEnums.FAIL);
                 }else{
                     return new ResgisterState(user.getUserId(),UserRegisterEnums.SUCCESS,user);
                 }
-            }else{
+            }else{//如果redis中已经存在，表示此时有相同的人再注册
                 return new ResgisterState(user.getUserId(),UserRegisterEnums.RedisEXIST);
             }
         }catch (UserExistException existException) {

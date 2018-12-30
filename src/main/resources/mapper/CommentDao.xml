@@ -29,6 +29,7 @@
         where user_id=#{userId}
     </select>
 
+
     <select id="queryCommentById" resultType="entity.Comment">
         select comment_id,new_id,user_id,content,create_time
         from new_comment
