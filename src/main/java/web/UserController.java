@@ -4,6 +4,7 @@ import dto.NewList;
 import dto.NewsResult;
 import dto.ResgisterState;
 import entity.User;
+import enums.UserRegisterEnums;
 import org.omg.PortableInterceptor.SUCCESSFUL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +39,7 @@ public class UserController {
 
     @Autowired
     private NewService newService;
+
 
 
     @Autowired
@@ -90,16 +92,17 @@ public class UserController {
             return "login";
         }
     }
+
     @RequestMapping(value = "/toregister")
     public String toregister(User user,Model model){
         Date createTime=new Date();
         user.setCreateTime(createTime);
-        logger.info(""+user);
+        logger.info("############yangxin专用日志###########  注册功能模块的前台传来的注册数据："+user);
 
         User existUser=userService.selectByName(user.getUserName());
 
         if(existUser!=null){//说明昵称已经存在
-            NewsResult<User> register=new NewsResult<User>(false,"用户名已经存在");
+            NewsResult<User> register=new NewsResult<User>(false, UserRegisterEnums.DBAEXIST.getStateInfo());
             model.addAttribute("result",register);
             return "register";
         }else {

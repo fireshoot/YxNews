@@ -7,8 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df32a22-40ae-493c-9c75-8d42d68bc1a6" name="Default Changelist" comment="用户登录注册页面功能，管理员登录功能完成">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/RedisDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/commentlist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/newlist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dao/RedisDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CommentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/CommentData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/CommentData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/NewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/NewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommentDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CommentDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/mapper/CommentDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/mapper/CommentDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/AdminIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/AdminIndex.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,22 +40,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/web/NewController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-387">
-              <caret line="85" column="24" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="24" />
+            <state relative-caret-position="83">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#tologin#0;class#UserController#0" />
+                <element signature="e#2800#2806#0" expanded="true" />
+                <element signature="e#3081#3087#0" expanded="true" />
+                <element signature="e#3280#3286#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="155" column="70" selection-start-line="155" selection-start-column="70" selection-end-line="155" selection-end-column="70" />
+            <state relative-caret-position="167">
+              <caret line="39" column="70" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -47,8 +78,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -93,16 +124,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/service/impl/CommentServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/tag.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/script/user.js" />
-        <option value="$PROJECT_DIR$/src/main/java/dto/NewsResult.java" />
-        <option value="$PROJECT_DIR$/src/test/java/service/impl/UserServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style-responsive.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/css/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/script/register.js" />
@@ -129,21 +153,28 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring/springWeb-config.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/ueditor/themes/iframe.css" />
         <option value="$PROJECT_DIR$/src/test/java/dao/CommentDaoTestw.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/CommentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/CommentDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/dto/CommentData.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/ueditor/jsp/config.json" />
         <option value="$PROJECT_DIR$/src/main/java/dto/NewList.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/newsdetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/web/NewController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/web/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/dto/CommentData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/CommentDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentDao.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/newlist.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/commentlist.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/web/NewController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/RedisDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java" />
+        <option value="$PROJECT_DIR$/src/test/java/dao/RedisDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/UserController.java" />
       </list>
     </option>
   </component>
@@ -175,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,14 +237,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YxNews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,7 +261,7 @@
               <item name="YxNews" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
@@ -247,74 +269,70 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
               <item name="YxNews" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
               <item name="YxNews" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
               <item name="YxNews" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546096921465" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546138164304" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="H:/ApplicationPath/TomCat/apache-tomcat-8.5.24/webapps/YxNews" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="dao" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\WEB-INF\lib" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\ueditor" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\lib" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\script" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\css" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\ueditor" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\lib" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\script" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\css" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\WEB-INF\lib" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\ueditor" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\lib" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\script" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\css" />
     </key>
   </component>
@@ -330,7 +348,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.YxTomcat">
+  <component name="RunManager" selected="JUnit.RedisDaoTest.setUser">
+    <configuration name="CommentDaoTest.queryAllCommentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="YxNews" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.CommentDaoTest" />
+      <option name="METHOD_NAME" value="queryAllCommentTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommentDaoTest.queryCommentByNewIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YxNews" />
       <extension name="coverage">
@@ -342,22 +376,6 @@
       <option name="PACKAGE_NAME" value="dao" />
       <option name="MAIN_CLASS_NAME" value="dao.CommentDaoTest" />
       <option name="METHOD_NAME" value="queryCommentByNewIdTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommentServiceImplTest.selectCommentByUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="YxNews" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.CommentServiceImplTest" />
-      <option name="METHOD_NAME" value="selectCommentByUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -379,7 +397,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoTest.queryByOnlyEmailTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RedisDaoTest.getUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YxNews" />
       <extension name="coverage">
         <pattern>
@@ -388,24 +406,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="dao" />
-      <option name="MAIN_CLASS_NAME" value="dao.UserDaoTest" />
-      <option name="METHOD_NAME" value="queryByOnlyEmailTest" />
+      <option name="MAIN_CLASS_NAME" value="dao.RedisDaoTest" />
+      <option name="METHOD_NAME" value="getUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceImplTest.register" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RedisDaoTest.setUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="YxNews" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.impl.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="service.impl" />
-      <option name="MAIN_CLASS_NAME" value="service.impl.UserServiceImplTest" />
-      <option name="METHOD_NAME" value="register" />
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.RedisDaoTest" />
+      <option name="METHOD_NAME" value="setUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -485,20 +503,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.CommentServiceImplTest.selectCommentByUser" />
-      <item itemvalue="JUnit.UserServiceImplTest.register" />
-      <item itemvalue="JUnit.UserDaoTest.queryByOnlyEmailTest" />
       <item itemvalue="JUnit.NewDaoTest.queryAllNewsTest" />
       <item itemvalue="JUnit.CommentDaoTest.queryCommentByNewIdTest" />
       <item itemvalue="Tomcat Server.YxTomcat" />
+      <item itemvalue="JUnit.CommentDaoTest.queryAllCommentTest" />
+      <item itemvalue="JUnit.RedisDaoTest.setUser" />
+      <item itemvalue="JUnit.RedisDaoTest.getUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RedisDaoTest.setUser" />
+        <item itemvalue="JUnit.RedisDaoTest.getUser" />
+        <item itemvalue="JUnit.CommentDaoTest.queryAllCommentTest" />
         <item itemvalue="JUnit.CommentDaoTest.queryCommentByNewIdTest" />
         <item itemvalue="JUnit.NewDaoTest.queryAllNewsTest" />
-        <item itemvalue="JUnit.UserDaoTest.queryByOnlyEmailTest" />
-        <item itemvalue="JUnit.UserServiceImplTest.register" />
-        <item itemvalue="JUnit.CommentServiceImplTest.selectCommentByUser" />
       </list>
     </recent_temporary>
   </component>
@@ -530,32 +548,12 @@
       <workItem from="1546060772276" duration="78000" />
       <workItem from="1546061006681" duration="47000" />
       <workItem from="1546063725384" duration="8398000" />
-      <workItem from="1546075509799" duration="10391000" />
+      <workItem from="1546075509799" duration="10997000" />
+      <workItem from="1546132795059" duration="5553000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDaoTest_queryByOnlyEmailTest - 2018.12.27 at 10h 15m 26s.xml">
-      <configuration name="UserDaoTest.queryByOnlyEmailTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewDaoTest_queryAllNewsTest - 2018.12.27 at 15h 47m 21s.xml">
-      <configuration name="NewDaoTest.queryAllNewsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewDaoTest_queryAllNewsTest - 2018.12.27 at 15h 50m 49s.xml">
-      <configuration name="NewDaoTest.queryAllNewsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewDaoTest_queryAllNewsTest - 2018.12.27 at 15h 52m 24s.xml">
-      <configuration name="NewDaoTest.queryAllNewsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewDaoTest_queryAllNewsTest - 2018.12.27 at 15h 54m 18s.xml">
-      <configuration name="NewDaoTest.queryAllNewsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewDaoTest_queryAllNewsTest - 2018.12.27 at 15h 55m 24s.xml">
-      <configuration name="NewDaoTest.queryAllNewsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="NewDaoTest_queryAllNewsTest - 2018.12.27 at 15h 57m 51s.xml">
-      <configuration name="NewDaoTest.queryAllNewsTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CommentDaoTest_queryCommentByNewIdTest - 2018.12.29 at 15h 35m 30s.xml">
       <configuration name="CommentDaoTest.queryCommentByNewIdTest" configurationId="JUnit" />
     </history-entry>
@@ -565,9 +563,30 @@
     <history-entry file="CommentDaoTest_queryCommentByNewIdTest - 2018.12.29 at 15h 42m 11s.xml">
       <configuration name="CommentDaoTest.queryCommentByNewIdTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CommentDaoTest_queryAllCommentTest - 2018.12.30 at 09h 48m 26s.xml">
+      <configuration name="CommentDaoTest.queryAllCommentTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentDaoTest_queryAllCommentTest - 2018.12.30 at 09h 55m 21s.xml">
+      <configuration name="CommentDaoTest.queryAllCommentTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisDaoTest_setUser - 2018.12.30 at 10h 26m 08s.xml">
+      <configuration name="RedisDaoTest.setUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisDaoTest_getUser - 2018.12.30 at 10h 27m 42s.xml">
+      <configuration name="RedisDaoTest.getUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisDaoTest_getUser - 2018.12.30 at 10h 28m 14s.xml">
+      <configuration name="RedisDaoTest.getUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisDaoTest_getUser - 2018.12.30 at 10h 37m 19s.xml">
+      <configuration name="RedisDaoTest.getUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RedisDaoTest_setUser - 2018.12.30 at 10h 41m 12s.xml">
+      <configuration name="RedisDaoTest.setUser" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115396000" />
+    <option name="totallyTimeSpent" value="121555000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,7 +601,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2580429" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2613941" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -592,7 +611,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.38243628" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.25212464" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -625,31 +644,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="用户登录注册页面功能，管理员登录功能完成" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/ueditor/dialogs/map/map.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/ueditor/themes/default/css/ueditor.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/ueditor/ueditor.parse.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/fsfdfd.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/adminHome.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminLogin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/ueditor/ueditor.all.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -740,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/enums/NewTypeEnums.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -776,22 +763,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/dao/CommentDaoTestw.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/sql/schem.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dto/NewDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="33" column="21" lean-forward="true" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -809,57 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dto/CommentData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/CommentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CommentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/ueditor/jsp/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -975,23 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="83" column="49" lean-forward="true" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/NewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="85" column="24" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1006,10 +917,175 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dto/CommentData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sql/schem.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1050" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/CommentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="63" />
+          <folding>
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1519#1520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding>
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1212#1213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/newlist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="155" column="70" selection-start-line="155" selection-start-column="70" selection-end-line="155" selection-end-column="70" />
+        <state relative-caret-position="126">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="n#footer#0;n#section#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/commentlist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/NewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="196" column="17" selection-start-line="196" selection-start-column="17" selection-end-line="196" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/RedisDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/dao/RedisDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="method#tologin#0;class#UserController#0" />
+            <element signature="e#2800#2806#0" expanded="true" />
+            <element signature="e#3081#3087#0" expanded="true" />
+            <element signature="e#3280#3286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="39" column="70" selection-start-line="39" selection-start-column="70" selection-end-line="39" selection-end-column="70" />
         </state>
       </provider>
     </entry>

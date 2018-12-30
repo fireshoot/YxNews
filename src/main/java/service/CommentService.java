@@ -28,6 +28,12 @@ public interface CommentService {
     List<Comment> selectCommentByUser(long userId);
 
     /*
+     * 获取所有的评论
+     * */
+    List<CommentData> selectAllComment();
+
+
+    /*
     * 用户自己删除自己的评论
     * */
     int deleteComment(long commentId,long userId);

@@ -53,4 +53,9 @@ public class CommentDaoTest {
         System.out.println("List<Comment>:"+comment);
     }
 
+    @Test
+    public void queryAllCommentTest(){
+        System.out.println("info:"+commentDao.queryAllComment());
+    }
+
 }

@@ -1,6 +1,7 @@
 package service.impl;
 
 
+import dao.RedisDao;
 import dao.UserDao;
 import dto.ResgisterState;
 import entity.User;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import service.UserService;
 
@@ -29,14 +31,20 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private RedisDao redisDao;
+
     @Override
+    @Transactional
     public ResgisterState register(User user)
             throws UserException,UserExistException,UserMisssException{
         String password=user.getUserPassword();
         user.setUserPassword(getSalt(password));
         try{
-            User u=userDao.queryByName(user.getUserName());
-            if(u==null){
+            //User u=userDao.queryByName(user.getUserName());
+            //从Redis中查询是否被注册
+            User redisUser=redisDao.getUser(user.getUserName());
+            if(redisUser==null){//如果redis中已经存在，表示此时有相同的人再注册
                 int insertCount=userDao.insertUser(user);
                 if(insertCount<=0){
                     return new ResgisterState(user.getUserId(),UserRegisterEnums.FAIL);
@@ -44,7 +52,7 @@ public class UserServiceImpl implements UserService {
                     return new ResgisterState(user.getUserId(),UserRegisterEnums.SUCCESS,user);
                 }
             }else{
-                return new ResgisterState(user.getUserId(),UserRegisterEnums.EXIST);
+                return new ResgisterState(user.getUserId(),UserRegisterEnums.RedisEXIST);
             }
         }catch (UserExistException existException) {
             throw existException;

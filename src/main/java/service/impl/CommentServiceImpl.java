@@ -44,6 +44,11 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public List<CommentData> selectAllComment() {
+        return commentDao.queryAllComment();
+    }
+
+    @Override
     public int deleteComment(long commentId, long userId) {
         Comment comment=commentDao.queryCommentById(commentId);
         if(comment!=null){

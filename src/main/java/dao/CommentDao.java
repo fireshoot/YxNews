@@ -23,6 +23,12 @@ public interface CommentDao {
     List<CommentData> queryCommentByNewId(@Param("newId") long newId);
 
     /*
+     * 根据新闻获取评论
+     * */
+    List<CommentData> queryAllComment();
+
+
+    /*
     * 显示用户参与的评论
     * */
     List<Comment> queryCommentByUserId(@Param("userId") long userId);

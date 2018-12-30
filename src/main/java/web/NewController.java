@@ -53,8 +53,17 @@ public class NewController {
         * */
 
         List<NewsData> list=newService.selectAllNews();
-        model.addAttribute("list",list);
+        List<CommentData> commentData = commentService.selectAllComment();
+        logger.info("############yangxin专用日志###########  后台主页评论列表功能模块的评论数据："+commentData);
+        model.addAttribute("Newslist",list);
+        model.addAttribute("commentlist",commentData);
         return "AdminIndex";
+    }
+
+    @RequestMapping(value = "deletecomment")
+    public String deleteComment(long commentd, String userName, Model model){
+      //  logger.info("############yangxin专用日志###########  XX功能模块的XX数据："+);
+        return "";
     }
 
     @RequestMapping("/submitcomment")

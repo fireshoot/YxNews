@@ -15,12 +15,23 @@ public class CommentData {
 
     private String username;
 
+    private String newtitle;
+
+    public String getNewtitle() {
+        return newtitle;
+    }
+
+    public void setNewtitle(String newtitle) {
+        this.newtitle = newtitle;
+    }
+
     @Override
     public String toString() {
         return "CommentData{" +
                 "success=" + success +
                 ", comment=" + comment +
                 ", username='" + username + '\'' +
+                ", newtitle='" + newtitle + '\'' +
                 '}';
     }
 

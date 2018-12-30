@@ -8,7 +8,8 @@ public enum UserRegisterEnums {
     SUCCESS(1,"成功"),
     FAIL(0,"注册失败"),
     INNER_ERROR(-1,"系统异常"),
-    EXIST(-2,"用户已存在"),
+    RedisEXIST(-2,"redis用户已存在"),
+    DBAEXIST(-5,"数据库中已存在"),
     NOTEXIST(-3,"用户不存在"),
     UPDATEFAIL(-4,"更新失败")
     ;
