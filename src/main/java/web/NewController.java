@@ -205,6 +205,7 @@ public class NewController {
                 return "redirect:/user/index.html";
         }
     }
+
     @RequestMapping(value = "/update")
     public String toupdate(New news,Model model){
         logger.info(news+"");

@@ -1,8 +1,8 @@
 package web;
 
-import dto.NewList;
-import dto.NewsResult;
-import dto.ResgisterState;
+import dto.*;
+import entity.Comment;
+import entity.New;
 import entity.User;
 import enums.UserRegisterEnums;
 import org.omg.PortableInterceptor.SUCCESSFUL;
@@ -12,11 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import service.CommentService;
 import service.NewService;
 import service.UserService;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 /**
  * UserController包含有登录、注册、用户信息修改三个模块。
@@ -40,6 +42,9 @@ public class UserController {
     @Autowired
     private NewService newService;
 
+    @Autowired
+    private CommentService commentService;
+
 
 
     @Autowired
@@ -53,7 +58,9 @@ public class UserController {
     @RequestMapping(value = "/index.html")
     public  String index(Model model ){
         NewList newList = newService.selectIndexNew();
+        List<NewsData> newsData = newService.selectAllNews();
         model.addAttribute("list",newList);
+        model.addAttribute("newData",newsData);
         return "NewIndex";
     }
 
@@ -71,6 +78,25 @@ public class UserController {
     @RequestMapping(value = "/adminLogin.html")
     public String adminLogin(){
         return "AdminLogin";
+    }
+
+    @RequestMapping(value = "/center.html")
+    public String center(Model model){
+        User user = (User) session.getAttribute("user");
+        if(user!=null){//表示已经登录
+
+            List<NewsData> list = newService.selectNewsByUserId(user.getUserId());
+            List<CommentData> list1 = commentService.selectCommentByUser(user.getUserId());
+
+            model.addAttribute("news",list);
+            model.addAttribute("comment",list1);
+            return "NewsAndComment";
+        }else{
+            NewsResult<String> result=new NewsResult<>(false,"未登录");
+            model.addAttribute("result",result);
+            return "redirect:/user/index.html";
+        }
+
     }
 
 

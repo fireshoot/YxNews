@@ -35,7 +35,7 @@ public interface NewDao {
     /*
     * 根据作者Id获取作者所写的新闻列表
     * */
-    List<New> queryByUserId(@Param("userId") long userId);
+    List<NewsData> queryByUserId(@Param("userId") long userId);
 
     /*
      * 后台管理员查看所有发表的新闻，并对其操作

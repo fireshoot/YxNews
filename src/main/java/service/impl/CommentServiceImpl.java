@@ -39,7 +39,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> selectCommentByUser(long userId) {
+    public List<CommentData> selectCommentByUser(long userId) {
         return commentDao.queryCommentByUserId(userId);
     }
 

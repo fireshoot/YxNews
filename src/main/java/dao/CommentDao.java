@@ -4,6 +4,7 @@ import dto.CommentData;
 import entity.Comment;
 import org.apache.ibatis.annotations.Param;
 
+import javax.xml.crypto.Data;
 import java.util.List;
 
 /**
@@ -33,7 +34,7 @@ public interface CommentDao {
     /*
     * 显示用户参与的评论
     * */
-    List<Comment> queryCommentByUserId(@Param("userId") long userId);
+    List<CommentData> queryCommentByUserId(@Param("userId") long userId);
 
     /*
      * 根据id查询

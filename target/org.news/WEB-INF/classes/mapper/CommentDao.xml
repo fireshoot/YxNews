@@ -23,10 +23,32 @@
         and  com.new_id=news.new_id
     </select>
 
-    <select id="queryCommentByUserId" resultType="entity.Comment">
-        select comment_id,new_id,user_id,content,create_time
-        from new_comment
-        where user_id=#{userId}
+    <select id="queryCommentByNewId" resultType="dto.CommentData">
+        select com.comment_id "comment.comment_id",
+        com.new_id "comment.new_id",
+        com.user_id "comment.user_id",
+        com.content "comment.content",
+        com.create_time "comment.create_time",
+        u.user_name "userName",
+        news.title  "newtitle"
+        from new_comment com , user u,new news
+        where com.user_id=u.user_id
+        and  com.new_id=news.new_id
+        and com.new_id=${newId}
+    </select>
+
+    <select id="queryCommentByUserId" resultType="dto.CommentData">
+        select com.comment_id "comment.comment_id",
+        com.new_id "comment.new_id",
+        com.user_id "comment.user_id",
+        com.content "comment.content",
+        com.create_time "comment.create_time",
+        u.user_name "userName",
+        news.title  "newtitle"
+        from new_comment com , user u,new news
+        where com.user_id=u.user_id
+        and  com.new_id=news.new_id
+        and com.user_id=#{userId}
     </select>
 
 

@@ -25,7 +25,7 @@ public interface CommentService {
     /*
      * 获取用户参与的评论
      * */
-    List<Comment> selectCommentByUser(long userId);
+    List<CommentData> selectCommentByUser(long userId);
 
     /*
      * 获取所有的评论

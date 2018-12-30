@@ -37,7 +37,7 @@ public class CommentDaoTest {
 
     @Test
     public void queryCommentByUserIdTest(){
-        List<Comment> list=commentDao.queryCommentByUserId(1009);
+        List<CommentData> list=commentDao.queryCommentByUserId(1009);
         System.out.println("List<Comment>:"+list);
     }
 

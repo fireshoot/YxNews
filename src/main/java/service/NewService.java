@@ -33,7 +33,7 @@ public interface NewService {
     /*
     * 作者查询自己发表的新闻列表
     * */
-    List<New> selectNewsByUserId(long userId);
+    List<NewsData> selectNewsByUserId(long userId);
 
     /*
     * 管理员查看所有发表新闻

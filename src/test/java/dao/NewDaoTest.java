@@ -46,7 +46,7 @@ public class NewDaoTest {
     @Test
     public void queryByUserIdTest(){
         int id=1009;
-        List<New> list=newDao.queryByUserId(id);
+        List<NewsData> list=newDao.queryByUserId(id);
         System.out.println("List<New>:"+list);
     }
 

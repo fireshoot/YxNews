@@ -88,7 +88,7 @@ public class NewServiceImpl implements NewService {
     }
 
     @Override
-    public List<New> selectNewsByUserId(long userId) {
+    public List<NewsData> selectNewsByUserId(long userId) {
         return newDao.queryByUserId(userId);
     }
 
