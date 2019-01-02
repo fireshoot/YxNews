@@ -22,8 +22,11 @@
                 </label>
                 <button class="btn btn-theme btn-block" id="submit" type="submit"><i class="fa fa-lock"></i>登 录</button>
                 <hr>
-                <div>
-                    ${result.errMes}
+                <div style="color: rebeccapurple">
+                        ${result.errMes}
+                    <%
+                        session.removeAttribute("result");
+                    %>
                 </div>
                 <span id="killPhoneMessage" class="glyphicon"></span>
                 <div class="registration">

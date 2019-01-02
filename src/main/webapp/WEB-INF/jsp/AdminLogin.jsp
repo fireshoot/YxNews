@@ -21,6 +21,9 @@
                 <button class="btn btn-theme btn-block" id="submit" type="submit"><i class="fa fa-lock"></i>登 录</button>
                 <div>
                     ${adminresult.errMes}
+                    <%
+                        session.removeAttribute("adminresult");
+                    %>
                 </div>
             </div>
         </form>

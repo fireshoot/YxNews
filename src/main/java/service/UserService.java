@@ -35,4 +35,9 @@ public interface UserService {
     * 通过邮箱验证用户
     * */
     User selectByEmail(String email,String username);
+
+    /*
+    * 强制下线
+    * */
+    void ForceLogout(String UserName);
 }

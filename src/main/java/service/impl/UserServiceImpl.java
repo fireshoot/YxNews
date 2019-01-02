@@ -18,6 +18,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import service.UserService;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+import java.util.Map;
+
 /**
  * @author yangxin
  * @time 2018/12/25  9:20
@@ -33,6 +37,9 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Autowired
+    private HttpSession session;
+
+    @Autowired
     private RedisDao redisDao;
 
     /*
@@ -45,10 +52,11 @@ public class UserServiceImpl implements UserService {
             throws UserException,UserExistException,UserMisssException, UserInsertException {
         String password=user.getUserPassword();
         user.setUserPassword(getSalt(password));
+        String redisKey="user:";
         try{
-            User redisUser=redisDao.getUser(user.getUserName());
+            User redisUser=redisDao.getUser(redisKey,user.getUserName());
             if(redisUser==null){
-                String res=redisDao.setUser(user);
+                String res=redisDao.setUser(redisKey,user);
                 logger.info("############yangxin专用日志########### 注册功能模块的插入Redis数据返回值："+res);
                 int insertCount=userDao.insertUser(user);
                 if(insertCount<=0){
@@ -80,8 +88,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User login(String userName, String Password) {
         String password=getSalt(Password);
-        System.out.println("password:"+password);
-        return userDao.queryById(userName,password);
+        String redisKey="userLogin:";
+        User user=redisDao.getUser(redisKey,userName);
+        if(user!=null){//user表示redis中存在。
+            return user;
+        }else{//表示redis中没有这个数据再数据库中查找
+            User dbUser = userDao.queryById(userName, password);
+            if(dbUser!=null){
+                String result=redisDao.setUser(redisKey,dbUser);
+                return dbUser;
+            }
+            return null;
+        }
     }
 
     @Override
@@ -110,5 +128,21 @@ public class UserServiceImpl implements UserService {
     private String getSalt(String userPassword){
         String md5=userPassword+'/'+salt;
         return DigestUtils.md5DigestAsHex(md5.getBytes());
+    }
+
+    public void ForceLogout(String UserName){
+        User u = (User) session.getAttribute("user");
+        try {
+            session.removeAttribute("user");
+            ServletContext application = session.getServletContext();
+            @SuppressWarnings("unchecked")
+            Map<Integer, Object> loginMap = (Map<Integer, Object>) application.getAttribute("loginMap");
+            logger.info("############yangxin专用日志###########  强制注销功能模块的数据："+u.getUserId());
+            loginMap.remove((int)u.getUserId());
+            application.setAttribute("loginMap", loginMap);
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.info("############yangxin专用日志###########  强制注销功能模块的出现异常");
+        }
     }
 }

@@ -124,7 +124,7 @@ public class NewController {
     public String detail(long newId,Model model){
         NewDetail newsData=newService.selectNew(newId);
         List<CommentData> list = commentService.selectCommentByNew(newId);
-        logger.info("************新闻详细信息的新闻数据***************"+newsData);
+        logger.info("************新闻详细信息的新闻数据***************"+newsData.getUser());
         logger.info("************新闻详细信息的评论数据***************"+list);
         model.addAttribute("detaildata",newsData);
         model.addAttribute("commentlist",list);
@@ -192,7 +192,6 @@ public class NewController {
         New news = detail.getaNew();
         if(user.getUserType()==2||user.getUserId()==news.getNewId()){
             NewsResult<NewDetail> result=new NewsResult<NewDetail>(true,detail);
-            logger.info(result.getData().getaNew().getContent());
             model.addAttribute("editResult",result);
             return "editNews";
         }else{
@@ -208,10 +207,7 @@ public class NewController {
 
     @RequestMapping(value = "/update")
     public String toupdate(New news,Model model){
-        logger.info(news+"");
-
         User user=(User)session.getAttribute("user");
-
         if(user!=null){
             news.setUserId(user.getUserId());
             InsertNewState state = newService.updateNews(news);

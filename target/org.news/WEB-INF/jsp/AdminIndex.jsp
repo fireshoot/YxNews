@@ -26,7 +26,8 @@
                     User user=(User)session.getAttribute("user");
                     if(user!=null){
                         %>
-                         <li><a class="logout" href="http://localhost:8080/user/adminLogin.html">Logout</a></li>
+                         <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>"
+                         >Logout</a></li>
                 <%
                     }else{
                         %>
@@ -119,10 +120,10 @@
 
 
 
-  <%-- <jsp:include page="newlist.jsp"/>
---%>
+ <%--  <jsp:include page="newlist.jsp"/>--%>
 
-    <%@include file="commentlist.jsp"%>
+
+   <%@include file="commentlist.jsp"%>
 
 
 

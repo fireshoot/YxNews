@@ -1,3 +1,4 @@
+<%@ page import="entity.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
@@ -22,6 +23,19 @@
     <!--webfont-->
     <link href='http://fonts.useso.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
+    <style>
+        ul.top-menu > li > .logout {
+            color: #f2f2f2;
+            font-size: 12px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border: 1px solid #64c3c2 !important;
+            padding: 5px 15px;
+            margin-right: 15px;
+            background: #4ECDC4;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
 <!-- header-section-starts -->
@@ -32,7 +46,28 @@
                                       class="img-responsive" alt=""/></a>
         </div>
         <div class="header-right">
-            <h4>用户</h4>
+            <%
+                User user = (User) session.getAttribute("user");
+                if (user != null) {
+            %>
+            <h4>欢迎用户<%=user.getUserName()%>
+                <ul class="pull-right top-menu">
+                    <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>">Logout</a></li>
+                </ul>
+            </h4>
+            <%
+            } else {
+            %>
+            <h4>
+                <div>未登录</div>
+                <ul class="pull-right top-menu">
+                    <li><a class="logout" href="http://localhost:8080/user/login1.html">ToLogin</a></li>
+                </ul>
+            </h4>
+            <%
+                }
+            %>
+
             <span class="menu"></span>
             <div class="top-menu">
                 <ul>
