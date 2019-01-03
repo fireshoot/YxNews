@@ -58,4 +58,10 @@ public class CommentDaoTest {
         System.out.println("info:"+commentDao.queryAllComment());
     }
 
+    @Test
+    public void selectCommentByLikeTest(){
+        String key="好极了";
+        System.out.println("List<Comment>:"+commentDao.selectCommentByLike(key));
+    }
+
 }

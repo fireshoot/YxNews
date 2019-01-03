@@ -46,4 +46,11 @@ public interface CommentDao {
     * */
     int deleteComment(@Param("commentId") long commentId,@Param("userId") long userId);
 
+
+    /*
+     * 显示用户参与的评论
+     * */
+    List<CommentData> selectCommentByLike(@Param("key") String key);
+
+
 }

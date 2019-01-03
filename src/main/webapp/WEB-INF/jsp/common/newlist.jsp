@@ -4,7 +4,7 @@
 <section id="main-content">
     <div class="mt" style="margin-right: 5px;margin-left: 5px;margin-top: 5px;margin-bottom: 5px">
         <div class="col-md-12">
-            <div style="color: rebeccapurple">${result}</div>
+            <div style="color: rebeccapurple"></div>
             <div class="content-panel">
                 <h4><i class="fa fa-angle-right"></i> 新闻列表</h4>
                 <hr>

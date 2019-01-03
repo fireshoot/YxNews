@@ -1086,7 +1086,7 @@ PANELS CONFIGURATIONS
 	background: #ffffff;
 	box-shadow: 0px 3px 2px #aab2bd;
 	padding-top: 100px;
-	padding-bottom: 25px;
+	padding-bottom: 150px;
 }
 .content-panel h4 {
 	margin-left: 10px;
@@ -1727,7 +1727,10 @@ background: #fffbcc !important;
 /* FORMS CONFIGURATION */
 .form-panel {
 	background: #ffffff;
-	margin: 10px;
+	margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
 	padding: 10px;
 	box-shadow: 0px 3px 2px #aab2bd;
 	text-align: left;

@@ -132,4 +132,14 @@ public class NewServiceImpl implements NewService {
             }
         }
     }
+
+    @Override
+    public List<NewsData> selectNewsByLike(String key) {
+        return newDao.selectByLike(key);
+    }
+
+    @Override
+    public List<NewsData> selectNewsByKey(String key) {
+        return newDao.selectByKeyWords(key);
+    }
 }

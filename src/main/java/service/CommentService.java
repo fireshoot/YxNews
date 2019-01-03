@@ -32,6 +32,12 @@ public interface CommentService {
      * */
     List<CommentData> selectAllComment();
 
+
+    /*
+     * 模糊查询
+     * */
+    List<CommentData> selectCommentByLike(String key);
+
     /*
      * 根据ID获取评论
      * */

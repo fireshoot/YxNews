@@ -40,4 +40,16 @@ public interface UserDao {
     * 通过邮箱验证
     * */
     User queryByOnlyEmail(@Param("email") String email,@Param("userName") String userName);
+
+
+    /*
+    * 查询所有用户信息
+    * */
+    List<User> queryAllUser();
+
+    /*
+    * 模糊查询用户列表
+    * */
+
+    List<User> selectUserByLike(@Param("key")String key);
 }

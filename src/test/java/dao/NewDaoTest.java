@@ -78,6 +78,19 @@ public class NewDaoTest {
         System.out.println("List<New>:"+list);
     }
 
+    @Test
+    public void selectByLikeTest(){
+        String key="yangxin";
+        System.out.println("List<News>:"+newDao.selectByLike(key));
+    }
+
+    @Test
+    public void selectByKeyWordsTest(){
+        String key="视频";
+        System.out.println("List<New>:"+newDao.selectByKeyWords(key));
+
+    }
+
 
 
 }

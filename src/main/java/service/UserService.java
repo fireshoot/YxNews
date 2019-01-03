@@ -3,6 +3,8 @@ package service;
 import dto.ResgisterState;
 import entity.User;
 
+import java.util.List;
+
 /**
  * 关于用户的操作，普通用户登录注册、管理员的登录
  *
@@ -15,6 +17,8 @@ public interface UserService {
     * 注册用户，默认是普通用户，不能是管理员
     * */
     ResgisterState register(User user);
+
+
 
     /*
     * 根据用户名验证用户是否存在
@@ -40,4 +44,14 @@ public interface UserService {
     * 强制下线
     * */
     void ForceLogout(String UserName);
+
+    /*
+    * 查询所有用户信息
+    * */
+    List<User> selectAllUser();
+
+    /*
+    * 模糊查找
+    * */
+    List<User> selectUserByLike(String key);
 }

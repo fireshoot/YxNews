@@ -52,5 +52,14 @@ public interface NewService {
     * */
     InsertNewState updateNews(New n);
 
+    /*
+    * 模糊查询
+    * */
+    List<NewsData> selectNewsByLike(String key);
+
+    /*
+     * 关键字查询
+     * */
+    List<NewsData> selectNewsByKey(String key);
 
 }

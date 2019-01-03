@@ -20,6 +20,7 @@ import service.UserService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -144,5 +145,15 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
             logger.info("############yangxin专用日志###########  强制注销功能模块的出现异常");
         }
+    }
+
+    @Override
+    public List<User> selectAllUser() {
+        return userDao.queryAllUser();
+    }
+
+    @Override
+    public List<User> selectUserByLike(String key) {
+        return userDao.selectUserByLike(key);
     }
 }

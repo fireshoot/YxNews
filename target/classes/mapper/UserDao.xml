@@ -15,6 +15,22 @@
           and  user_password=#{userPassword}
     </select>
 
+
+    <select id="queryAllUser" resultType="entity.User">
+          select user_id,user_type,user_password,user_name,user_email,user_age,create_time
+          from user
+    </select>
+
+    <select id="selectUserByLike" resultType="entity.User">
+        <bind name="keys" value="'%' + key + '%'" />
+          select user_id,user_type,user_password,user_name,user_email,user_age,create_time
+          from user
+          where
+          user_name like #{keys}
+          or user_email like #{keys}
+          or create_time like #{keys}
+    </select>
+
     <select id="queryByName" resultType="entity.User">
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
           from user

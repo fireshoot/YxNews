@@ -56,6 +56,16 @@ public class UserDaoTest {
         System.out.println("User:"+userDao.queryByOnlyEmail("7574","yangxin"));
     }
 
+    @Test
+    public void queryAllUserTest(){
+        System.out.println("List<user>:"+userDao.queryAllUser());
+    }
+
+    @Test
+    public void selectUserByLikeTest(){
+        String key="yangxin";
+        System.out.println("List<User>:"+userDao.selectUserByLike(key));
+    }
 
 
 }

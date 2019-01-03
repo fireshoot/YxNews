@@ -39,7 +39,7 @@ public class New {
                 ", categoryId=" + categoryId +
                 ", userId=" + userId +
                 ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                /*", content='" + content + '\'' +*/
                 ", createTime=" + createTime +
                 ", keyWords='" + keyWords + '\'' +
                 '}';

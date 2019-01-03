@@ -3,7 +3,7 @@
 <%@include file="common/tag.jsp" %>
 <html>
 <head>
-    <title>后台主页</title>
+    <title>后台主页-新闻列表</title>
     <%@include file="common/header.jsp" %>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/css/to-do.css">
 </head>
@@ -17,20 +17,20 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="index.html" class="logo"><b><span>新闻页</span></b></a>
+        <a href="http://localhost:8080/user/index.html" class="logo"><b><span>新闻页</span></b></a>
         <!--logo end-->
         <div class="top-menu">
             <ul class="pull-right top-menu">
                 <br>
                 <%
-                    User user=(User)session.getAttribute("user");
-                    if(user!=null){
-                        %>
-                         <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>"
-                         >Logout</a></li>
+                    User user = (User) session.getAttribute("user");
+                    if (user != null) {
+                %>
+                <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>"
+                >Logout</a></li>
                 <%
-                    }else{
-                        %>
+                } else {
+                %>
                 <li><a class="logout" href="http://localhost:8080/user/adminLogin.html">ToLogin</a></li>
                 <%
                     }
@@ -48,28 +48,29 @@
             <ul class="sidebar-menu" id="nav-accordion">
                 <p class="centered"><a href="profile.html">
                     <%
-                        if(user!=null) {/*说明已登录*/
+                        if (user != null) {/*说明已登录*/
                     %>
                     <img src="${pageContext.request.contextPath}/resource/img/ui-sam.jpg" class="img-circle" width="80">
                     <%
-                        }else{
-                            %>
+                    } else {
+                    %>
                     <img src="" class="img-circle" width="80">
                     <%
                         }
-                        %>
+                    %>
 
                 </a>
                 </p>
                 <%
 
-                    if(user!=null){/*说明已登录*/
-                        %>
-                    <h5 class="centered">管理员:<%=user.getUserName()%></h5>
+                    if (user != null) {/*说明已登录*/
+                %>
+                <h5 class="centered">管理员:<%=user.getUserName()%>
+                </h5>
                 <%
-                    }else{
-                        %>
-                     <h5 class="centered">请登录！！</h5>
+                } else {
+                %>
+                <h5 class="centered">请登录！！</h5>
                 <%
                     }
                 %>
@@ -80,38 +81,28 @@
                     </a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="javascript:;" class="dcjq-parent">
+                    <a href="#" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>文章列表</span>
                         <span class="dcjq-icon"></span></a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="javascript:;" class="dcjq-parent">
+                    <a href="http://localhost:8080/new/commentlist.html" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>评论列表</span>
                         <span class="dcjq-icon"></span></a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="javascript:;" class="dcjq-parent">
+                    <a href="http://localhost:8080/new/userlist.html" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>用户列表</span>
                         <span class="dcjq-icon"></span></a>
-                    <ul class="sub" style="display: none;">
-                        <li><a href="">普通用户</a></li>
-                        <li><a href="">认证用户</a></li>
-                        <li><a href="">管理员</a></li>
-                    </ul>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="javascript:;" class="dcjq-parent">
+                    <a href="http://localhost:8080/new/editor.html" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
-                        <span>功能三</span>
+                        <span>添加文章</span>
                         <span class="dcjq-icon"></span></a>
-                    <ul class="sub" style="display: none;">
-                        <li><a href="">次级</a></li>
-                        <li><a href="">次级</a></li>
-                        <li><a href="">次级</a></li>
-                    </ul>
                 </li>
             </ul>
             <!-- sidebar menu end-->
@@ -119,14 +110,101 @@
     </aside>
 
 
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <div class="mt" style="margin-right: 5px;margin-left: 5px;margin-top: 5px;margin-bottom: 5px">
 
- <%--  <jsp:include page="newlist.jsp"/>--%>
+            <div class="col-md-12">
+                <div style="color: rebeccapurple"></div>
+                <div class="content-panel">
+                    <h4><i class="fa fa-angle-right"></i> 新闻列表</h4>
+                    <hr>
+                    <div class="form-panel">
+                        <form class="form-inline" role="form"
+                              action="/new/seleceByLike" method="post"
+                              style="display: contents">
+                            <div class="form-group" style="display: contents">
+                                <label class="sr-only" for="exampleInput1">模糊查询</label>
+                                <span style="color: rebeccapurple" id="tip1"></span>
+                                <input type="text" class="form-control" name="selectkey"  id="exampleInput1"
+                                       placeholder="模糊查询">
+                            </div>
+                            <button type="submit" class="btn btn-theme">查找</button>
+                        </form>
+                        <form class="form-inline"
+                              action="/new/seleceByKey"
+                              style="display: contents">
+                            <div class="form-group" style="display: contents">
+                                <label class="sr-only" for="exampleInput2">关键字查询</label>
+                                <span style="color: rebeccapurple" id="tip2"></span>
+                                <input type="text" class="form-control" id="exampleInput2" name="selectkey"
+                                       placeholder="关键字查询">
+                            </div>
+                            <button type="submit" class="btn btn-theme">查找</button>
+                        </form>
+
+                    </div>
+                    <!-- /form-panel -->
 
 
-   <%@include file="commentlist.jsp"%>
+                    <table class="table table-striped table-advance table-hover">
+                        <thead>
+                        <tr>
+                            <th><i class="fa fa-bullhorn"></i> 编号</th>
+                            <th><i class="fa fa-tags"></i> 类别</th>
+                            <th><i class="fa fa-user"></i> 作者账户</th>
+                            <th><i class="fa fa-tasks"></i> 标题</th>
+                            <th class="hidden-phone"><i class="fa fa-question-circle"></i> 描述</th>
+                            <th class="hidden-phone"><i class="fa fa-bars"></i> 发表时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="news" items="${Newslist}">
+                            <tr>
+                                <td>
+                                        ${news.aNew.newId}
+                                </td>
+                                <td class="hidden-phone">${news.typeName}</td>
+                                <td>${news.userName}</td>
+                                <td>${news.aNew.title}</td>
+                                <td id="desc">${news.aNew.keyWords}"</td>
+                                <td><fmt:formatDate value="${news.aNew.createTime}"
+                                                    pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
+                                <td>
+                                    <a href="/new/detail?newId=${news.aNew.newId}">
+                                        <button class="btn btn-success">
+                                            <i class="fa fa-check">
+                                                详情</i></button>
+                                    </a>
+                                    <a href="/new/edit?newId=${news.aNew.newId}&userName=${news.userName}">
+                                        <button class="btn btn-primary"><i class="fa fa-pencil">修改
+                                        </i></button>
+                                    </a>
+                                    <a href="/new/delete?newId=${news.aNew.newId}&userName=${news.userName}">
+                                        <button class="btn btn-danger">
+                                            <i class="fa fa-trash-o ">
+                                                删除</i></button>
+                                    </a>
 
+                                </td>
+                            </tr>
+                        </c:forEach>
 
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /content-panel -->
+            </div>
+            <!-- /col-md-12 -->
+        </div>
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
 
+    <%-- <%@include file="commentlist.jsp"%>--%>
 
 
     <footer class="site-footer">
@@ -145,8 +223,6 @@
     <!--footer end-->
 </section>
 
-
-${result.data}
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
@@ -169,6 +245,29 @@ ${result.data}
     jQuery(document).ready(function () {
         TaskList.initTaskWidget();
     });
+
+    function checktext1() {
+        text = document.getElementById("exampleInput1");
+        tip = document.getElementById("tip1");
+        if(text.value.toString()==""){
+            tip.innerHTML="输入框不能为空";
+            return false;
+        }else{
+            tip.innerHTML="";
+            return true;
+        }
+    }
+    function checktext2() {
+        text = document.getElementById("exampleInput2");
+        tip = document.getElementById("tip2");
+        if(text.value.toString()==""){
+            tip.innerHTML="输入框不能为空";
+            return false;
+        }else{
+            tip.innerHTML="";
+            return true;
+        }
+    }
 
     function detail(id) {
         location.href = "/new/delete?newId=" + id;

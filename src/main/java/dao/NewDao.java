@@ -52,4 +52,14 @@ public interface NewDao {
     * */
     int updateNew(New news);
 
+    /*
+    * 模糊查询
+    * */
+    List<NewsData> selectByLike(@Param("key")String key);
+
+    /*
+     * 关键字查询
+     * */
+    List<NewsData> selectByKeyWords(@Param("keyWords")String keyWords);
+
 }

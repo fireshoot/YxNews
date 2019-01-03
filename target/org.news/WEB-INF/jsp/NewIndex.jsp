@@ -42,8 +42,8 @@
 <div class="header">
     <div class="container">
         <div class="logo">
-            <a href="index.html"><img src="${pageContext.request.contextPath}/resource/img/apple-touch-icon.png"
-                                      class="img-responsive" alt=""/></a>
+            <a href="index.html"><img src="${pageContext.request.contextPath}/resource/img/friends/fr-09.jpg"
+                                      class="img-responsive" alt="" style="width: 100px; height: 100px"/></a>
         </div>
         <div class="header-right">
             <%

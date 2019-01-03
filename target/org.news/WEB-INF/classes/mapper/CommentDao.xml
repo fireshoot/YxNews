@@ -23,6 +23,24 @@
         and  com.new_id=news.new_id
     </select>
 
+
+    <select id="selectCommentByLike" resultType="dto.CommentData">
+        <bind name="keys" value="'%' + key + '%'" />
+        select com.comment_id "comment.comment_id",
+        com.new_id "comment.new_id",
+        com.user_id "comment.user_id",
+        com.content "comment.content",
+        com.create_time "comment.create_time",
+        u.user_name "userName",
+        news.title  "newtitle"
+        from new_comment com inner join user u on com.user_id=u.user_id
+                             inner join new news on com.new_id=news.new_id
+        where
+        com.content like #{keys}
+        or u.user_name like #{keys}
+        or news.title like #{keys}
+    </select>
+
     <select id="queryCommentByNewId" resultType="dto.CommentData">
         select com.comment_id "comment.comment_id",
         com.new_id "comment.new_id",

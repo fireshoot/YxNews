@@ -60,6 +60,44 @@
         order by cate.category_id desc
     </select>
 
+
+    <select id="selectByLike" resultType="dto.NewsData">
+        <bind name="keys" value="'%' + key + '%'" />
+        select n.new_id "aNew.new_id",
+        n.category_id "aNew.category_id",
+        n.user_id "aNew.user_id",
+        n.title "aNew.title",
+        n.content "aNew.content",
+        n.create_time "aNew.create_time",
+        n.key_words "aNew.key_words",
+        category_name "typeName",
+        u.user_name
+        from new n inner join user u on n.user_id=u.user_id
+        inner join category cate on n.category_id=cate.category_id
+        where
+            cate.category_name like #{keys}
+            or u.user_name like #{keys}
+            or n.title like #{keys}
+            or n.key_words like #{keys}
+    </select>
+
+    <select id="selectByKeyWords" resultType="dto.NewsData">
+        <bind name="keys" value="'%' + keyWords + '%'" />
+        select n.new_id "aNew.new_id",
+        n.category_id "aNew.category_id",
+        n.user_id "aNew.user_id",
+        n.title "aNew.title",
+        n.content "aNew.content",
+        n.create_time "aNew.create_time",
+        n.key_words "aNew.key_words",
+        category_name "typeName",
+        u.user_name
+        from new n inner join user u on n.user_id=u.user_id
+        inner join category cate on n.category_id=cate.category_id
+        where
+        n.key_words like #{keys}
+    </select>
+
     <delete id="deleteNew">
         delete
         from  new

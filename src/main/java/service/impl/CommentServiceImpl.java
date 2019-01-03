@@ -49,6 +49,11 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public List<CommentData> selectCommentByLike(String key) {
+        return commentDao.selectCommentByLike(key);
+    }
+
+    @Override
     public Comment selectCommentById(long commentId) {
         return commentDao.queryCommentById(commentId);
     }
