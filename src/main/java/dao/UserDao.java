@@ -10,7 +10,6 @@ import java.util.List;
  * @time 2018/12/24  14:30
  */
 public interface UserDao {
-
     /*
     * 插入用户
     * */
@@ -41,7 +40,6 @@ public interface UserDao {
     * */
     User queryByOnlyEmail(@Param("email") String email,@Param("userName") String userName);
 
-
     /*
     * 查询所有用户信息
     * */
@@ -50,6 +48,5 @@ public interface UserDao {
     /*
     * 模糊查询用户列表
     * */
-
     List<User> selectUserByLike(@Param("key")String key);
 }

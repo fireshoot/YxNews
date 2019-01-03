@@ -11,7 +11,6 @@ import java.util.List;
  * @time 2018/12/24  14:45
  */
 public interface NewDao {
-
     /*
     * 插入新闻
     * */

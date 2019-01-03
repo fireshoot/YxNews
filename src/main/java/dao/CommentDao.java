@@ -12,7 +12,6 @@ import java.util.List;
  * @time 2018/12/24  15:00
  */
 public interface CommentDao {
-
     /*
     * 添加评论
     * */
@@ -24,12 +23,9 @@ public interface CommentDao {
     List<CommentData> queryCommentByNewId(@Param("newId") long newId);
 
     /*
-     * 根据新闻获取评论
+     * 获取所有评论
      * */
     List<CommentData> queryAllComment();
-
-
-
 
     /*
     * 显示用户参与的评论
@@ -46,11 +42,8 @@ public interface CommentDao {
     * */
     int deleteComment(@Param("commentId") long commentId,@Param("userId") long userId);
 
-
     /*
-     * 显示用户参与的评论
+     * 模糊查询
      * */
     List<CommentData> selectCommentByLike(@Param("key") String key);
-
-
 }
