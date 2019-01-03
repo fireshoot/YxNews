@@ -24,7 +24,7 @@ public class UserDaoTest {
 
     @Test
     public void insertUserTest(){
-        User user=new User(2,"王玉凤","123456a","855566@163.com",18);
+        User user=new User(2,"王玉32","123456a","855566@163.com",18);
         System.out.println(userDao.insertUser(user));
     }
 
