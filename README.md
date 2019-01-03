@@ -8,6 +8,10 @@
 
 编辑器使用的是UEditor：教程如下http://fex.baidu.com/ueditor/#start-toolbar
 
+
+博客链接：https://www.cnblogs.com/yangdagaoge/category/1374971.html
+
+
 效果图如下：
 ![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/1.png)
 ![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/2.png)
