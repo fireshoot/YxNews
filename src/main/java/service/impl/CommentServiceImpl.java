@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import service.CommentService;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class CommentServiceImpl implements CommentService {
     private CommentDao commentDao;
 
     @Override
+    @Transactional
     public CommentState insertComment(Comment comment)
             throws CommentException, CommentInsertException {
         try {
