@@ -6,10 +6,7 @@ import dao.UserDao;
 import dto.ResgisterState;
 import entity.User;
 import enums.UserRegisterEnums;
-import exception.UserException;
-import exception.UserExistException;
-import exception.UserInsertException;
-import exception.UserMisssException;
+import exception.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,19 +101,29 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResgisterState updateUser(User user) {
-        User u=userDao.queryByOnlyId(user.getUserId());
-        if(u==null){
-            return new ResgisterState(user.getUserId(),UserRegisterEnums.NOTEXIST);
-        }else{
-            String pas=getSalt(user.getUserPassword());
-            user.setUserPassword(pas);
-            int updateCount=userDao.updateUser(user);
-            if(updateCount<=0){
-                return new ResgisterState(user.getUserId(),UserRegisterEnums.UPDATEFAIL);
+    @Transactional
+    public ResgisterState updateUser(User user)
+            throws UserException, UserUpdateException {
+        try{
+            User u=userDao.queryByOnlyId(user.getUserId());
+            if(u==null){
+                return new ResgisterState(user.getUserId(),UserRegisterEnums.NOTEXIST);
             }else{
-                return new ResgisterState(user.getUserId(),UserRegisterEnums.SUCCESS,user);
+                String pas=getSalt(user.getUserPassword());
+                user.setUserPassword(pas);
+                int updateCount=userDao.updateUser(user);
+                if(updateCount<=0){
+                    throw new UserUpdateException(UserRegisterEnums.UPDATEFAIL.getStateInfo());
+                }else{
+                    return new ResgisterState(user.getUserId(),UserRegisterEnums.SUCCESS,user);
+                }
             }
+        }catch (UserUpdateException e1){
+            logger.error(e1.getMessage(),e1);
+            return new ResgisterState(user.getUserId(),UserRegisterEnums.UPDATEFAIL);
+        } catch(Exception e){
+            logger.error(e.getMessage(),e);
+            return  new ResgisterState(user.getUserId(),UserRegisterEnums.INNER_ERROR);
         }
     }
 
