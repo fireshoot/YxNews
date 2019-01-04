@@ -4,6 +4,8 @@ import dto.*;
 import entity.Comment;
 import entity.New;
 import entity.User;
+import enums.CommentState;
+import enums.InsertNewEnums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,37 +45,39 @@ public class NewController {
 
     @RequestMapping(value = "/adminIndex.html")
     public String adminIndex(Model model) {
-        /*
-         * 待优化，采用redis缓存
-         *
-         * */
-
-        /*
-         * 数据有：类型名；作者名：简要描述，
-         * */
-
-        List<NewsData> list = newService.selectAllNews();
-
-        model.addAttribute("Newslist", list);
-
-        return "AdminIndex";
+        User user = (User) session.getAttribute("user");
+        if (user != null) {//表示已经登录
+            List<NewsData> list = newService.selectAllNews();
+            model.addAttribute("Newslist", list);
+            return "AdminIndex";
+        }else{
+            return "redirect:/user/adminLogin.html";
+        }
     }
 
     @RequestMapping(value = "/commentlist.html")
     public String commentlist(Model model){
-        List<CommentData> commentData = commentService.selectAllComment();
-        model.addAttribute("commentlist", commentData);
-        return "AdminIndexComment";
+        User user = (User) session.getAttribute("user");
+        if (user != null) {//表示已经登录
+            List<CommentData> commentData = commentService.selectAllComment();
+            model.addAttribute("commentlist", commentData);
+            return "AdminIndexComment";
+        }else{
+            return "redirect:/user/adminLogin.html";
+        }
     }
 
     @RequestMapping(value = "/userlist.html")
     public String userlist(Model model){
-        List<User> list = userService.selectAllUser();
-        model.addAttribute("userList", list);
-        return "AdminIndexUser";
+        User user = (User) session.getAttribute("user");
+        if (user != null) {//表示已经登录
+            List<User> list = userService.selectAllUser();
+            model.addAttribute("userList", list);
+            return "AdminIndexUser";
+        }else{
+            return "redirect:/user/adminLogin.html";
+        }
     }
-
-
 
     @RequestMapping(value = "deletecomment")
     public String deleteComment(long commentId, String userName, Model model) {
@@ -83,16 +87,16 @@ public class NewController {
         if (user.getUserType() == 2 || user.getUserId() == comment.getNewId()) {
             int i = commentService.deleteComment(commentId, user.getUserId());
             if (i <= 0) {
-                NewsResult<Comment> result = new NewsResult<Comment>(false, "操作失败");
+                NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.FAIL.getStateInfo());
                 model.addAttribute("editResult", result);
             } else {
                 //如果不是作者本人或者是管理员那么不允许修改文章。
-                NewsResult<Comment> result = new NewsResult<Comment>(true, "操作成功");
+                NewsResult<Comment> result = new NewsResult<Comment>(true, CommentState.SUCCESS.getStateInfo());
                 model.addAttribute("editResult", result);
             }
         } else {
             //如果不是作者本人或者是管理员那么不允许修改文章。
-            NewsResult<Comment> result = new NewsResult<Comment>(false, "无权限");
+            NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.UNOPERATION.getStateInfo());
             model.addAttribute("editResult", result);
         }
         if (user.getUserType() == 2)
@@ -104,9 +108,7 @@ public class NewController {
     @RequestMapping("/submitcomment")
     public String submitComment(String commentContent, long newId, Model model) {
         logger.info("*************提交评论获取内容：" + commentContent + newId);
-
         User user = (User) session.getAttribute("user");
-
         logger.info("**************目前是否登录：" + user);
 
         if (user != null) {//目前已经登录
@@ -117,24 +119,31 @@ public class NewController {
             comment.setCreateTime(new Date());
             int i = commentService.insertComment(comment);
             if (i <= 0) {//插入失败
-                NewsResult<Comment> result = new NewsResult<Comment>(false, "网络忙");
+                NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.INTERBUSY.getStateInfo());
                 model.addAttribute("insertComment", result);
             } else {
-                NewsResult<Comment> result = new NewsResult<Comment>(true, "操作成功");
+                NewsResult<Comment> result = new NewsResult<Comment>(true, CommentState.SUCCESS.getStateInfo());
                 model.addAttribute("insertComment", result);
             }
         } else {//表示未登录
-            NewsResult<Comment> result = new NewsResult<Comment>(false, "未登录");
+            NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.UNLOGIN.getStateInfo());
             model.addAttribute("insertComment", result);
+            return "redirect:/user/login1.html";
         }
         return "redirect:/new/detail?newId=" + newId;
     }
 
     @RequestMapping(value = "/editor.html")
-    public String editor() {
-        return "editor";
+    public String editor(int index) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {//表示已经登录
+            return "editor";
+        }else{
+            if(index==1)
+            return "redirect:/user/login1.html";
+            return "redirect:/user/adminLogin.html";
+        }
     }
-
 
     @RequestMapping("/detail")
     public String detail(long newId, Model model) {
@@ -147,42 +156,36 @@ public class NewController {
         return "newsdetail";
     }
 
-
     @RequestMapping(value = "/submitContent")
     public String toSubmit(New news, Model model) {
         User user = (User) session.getAttribute("user");
         if (user != null) {
             news.setUserId(user.getUserId());
             //先确定有没有这个片文章再插入。
-
-
-            /*
-             *
-             * 还缺少一个根据title查找的接口
-             *
-             * */
-
-
-            InsertNewState state = newService.insertNew(news);
-
-            if (state.getState() != 1) {//表示失败
-                NewsResult<New> result = new NewsResult<New>(false, state.getStateInfo());
+            New aNew = newService.selectNewsBytitle(news.getTitle());
+            if(aNew!=null){//表示已经存在
+                NewsResult<New> result = new NewsResult<New>(false, InsertNewEnums.EXIST.getStateinfo());
                 model.addAttribute("insertNewResult", result);
                 return "editor";
-            } else {
-                NewsResult<New> result = new NewsResult<New>(true, news);
-                model.addAttribute("insertNewResult", result);
-                return "redirect:/new/adminIndex.html";
+            }else{
+                InsertNewState state = newService.insertNew(news);
+
+                if (state.getState() != 1) {//表示失败
+                    NewsResult<New> result = new NewsResult<New>(false, state.getStateInfo());
+                    model.addAttribute("insertNewResult", result);
+                    return "editor";
+                } else {
+                    NewsResult<New> result = new NewsResult<New>(true, news);
+                    model.addAttribute("insertNewResult", result);
+                    return "redirect:/new/adminIndex.html";
+                }
             }
-
-
         } else {
-            NewsResult<New> result = new NewsResult<New>(false, "还没有登录");
+            NewsResult<New> result = new NewsResult<New>(false, InsertNewEnums.UNLOGIN.getStateinfo());
             model.addAttribute("insertNewResult", result);
             return "editor";
         }
     }
-
 
     @RequestMapping(value = "/delete")
     public String delete(long newId, String userName, Model model) {
@@ -210,7 +213,7 @@ public class NewController {
             return "editNews";
         } else {
             //如果不是作者本人或者是管理员那么不允许修改文章。
-            NewsResult<New> result = new NewsResult<New>(false, "无权限");
+            NewsResult<New> result = new NewsResult<New>(false, InsertNewEnums.UNOPERATION.getStateinfo());
             model.addAttribute("editResult", result);
             if (user.getUserType() == 2)
                 return "redirect:/new/adminIndex.html";
@@ -235,12 +238,11 @@ public class NewController {
                 return "redirect:/new/adminIndex.html";
             }
         } else {
-            NewsResult<New> newNewsResult = new NewsResult<New>(false, "未登录");
+            NewsResult<New> newNewsResult = new NewsResult<New>(false, InsertNewEnums.UNLOGIN.getStateinfo());
             model.addAttribute("updateResult", newNewsResult);
             return "editNews";
         }
     }
-
 
     /*
     * 模糊查询新闻

@@ -11,7 +11,8 @@ public enum UserRegisterEnums {
     RedisEXIST(-2,"该用户名不能够被注册"),
     DBAEXIST(-5,"数据库中已存在该用户"),
     NOTEXIST(-3,"用户不存在"),
-    UPDATEFAIL(-4,"更新失败")
+    UPDATEFAIL(-4,"更新失败"),
+    UNLOGIN(-10,"未登录"),
     ;
 
     private int state;

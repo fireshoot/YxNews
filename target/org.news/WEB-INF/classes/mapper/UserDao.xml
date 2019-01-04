@@ -3,20 +3,24 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.UserDao">
+    <!-- 插入用户-->
     <insert id="insertUser" parameterType="entity.User">
           insert ignore into user(user_type,user_password,user_name,user_email,user_age)
           values (0,#{userPassword},#{userName},#{userEmail},#{userAge})
     </insert>
+    <!-- 登录验证-->
     <select id="queryById" resultType="entity.User">
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
           from user
           where user_name=#{userName}
           and  user_password=#{userPassword}
     </select>
+    <!-- 获取用户列表-->
     <select id="queryAllUser" resultType="entity.User">
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
           from user
     </select>
+    <!-- 模糊查询-->
     <select id="selectUserByLike" resultType="entity.User">
         <bind name="keys" value="'%' + key + '%'" />
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
@@ -26,22 +30,26 @@
           or user_email like #{keys}
           or create_time like #{keys}
     </select>
+    <!-- 通过用户名查询用户数据-->
     <select id="queryByName" resultType="entity.User">
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
           from user
           where user_name=#{userName}
     </select>
+    <!-- 通过user_id查询数据-->
     <select id="queryByOnlyId" resultType="entity.User">
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
           from user
           where user_id=#{userId}
     </select>
+    <!-- 通过邮箱验证用户-->
     <select id="queryByOnlyEmail" resultType="entity.User">
           select user_id,user_type,user_password,user_name,user_email,user_age,create_time
           from user
           where user_email=#{email}
           and user_name=#{userName}
     </select>
+    <!-- 更新信息-->
     <update id="updateUser" parameterType="entity.User">
             update
                 user

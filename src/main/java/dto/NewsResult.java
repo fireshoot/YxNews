@@ -33,7 +33,7 @@ public class NewsResult<T> {
         this.errMes = errMes;
     }
 
-    public boolean isSuccess() {
+    public boolean getIsSuccess() {
         return success;
     }
 

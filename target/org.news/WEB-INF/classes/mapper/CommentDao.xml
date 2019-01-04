@@ -3,13 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="dao.CommentDao">
+    <!-- 添加评论-->
     <insert id="insertComment" parameterType="entity.Comment">
         insert ignore into new_comment(new_id,user_id,content)
         values (#{newId},#{userId},#{content})
     </insert>
-
-
-
+    <!-- 获取所有评论，返回值是CommentData类型-->
     <select id="queryAllComment" resultType="dto.CommentData">
         select com.comment_id "comment.comment_id",
         com.new_id "comment.new_id",
@@ -22,8 +21,7 @@
         where com.user_id=u.user_id
         and  com.new_id=news.new_id
     </select>
-
-
+    <!-- 模糊查询-->
     <select id="selectCommentByLike" resultType="dto.CommentData">
         <bind name="keys" value="'%' + key + '%'" />
         select com.comment_id "comment.comment_id",
@@ -40,7 +38,7 @@
         or u.user_name like #{keys}
         or news.title like #{keys}
     </select>
-
+    <!-- 根据新闻Id查询评论列表-->
     <select id="queryCommentByNewId" resultType="dto.CommentData">
         select com.comment_id "comment.comment_id",
         com.new_id "comment.new_id",
@@ -54,7 +52,7 @@
         and  com.new_id=news.new_id
         and com.new_id=${newId}
     </select>
-
+    <!-- 通过用户Id查询评论列表-->
     <select id="queryCommentByUserId" resultType="dto.CommentData">
         select com.comment_id "comment.comment_id",
         com.new_id "comment.new_id",
@@ -68,18 +66,16 @@
         and  com.new_id=news.new_id
         and com.user_id=#{userId}
     </select>
-
-
+    <!-- 通过评论id获取评论数据-->
     <select id="queryCommentById" resultType="entity.Comment">
         select comment_id,new_id,user_id,content,create_time
         from new_comment
         where comment_id=#{commentId}
     </select>
-
+    <!-- 删除评论-->
     <delete id="deleteComment">
         delete from new_comment
         where comment_id=#{commentId}
         and user_id=#{userId}
     </delete>
-
 </mapper>

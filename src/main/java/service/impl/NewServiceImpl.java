@@ -142,4 +142,9 @@ public class NewServiceImpl implements NewService {
     public List<NewsData> selectNewsByKey(String key) {
         return newDao.selectByKeyWords(key);
     }
+
+    @Override
+    public New selectNewsBytitle(String title) {
+        return newDao.queryByNewName(title);
+    }
 }

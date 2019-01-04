@@ -92,7 +92,6 @@ public class UserController {
         return "ForgetPassword";
     }
 
-
     /*
      * 跳转到管理员登录
      * */
@@ -102,39 +101,36 @@ public class UserController {
     }
 
     /*
-     * 跳转到用户中心
+     * 跳转到用户中心,未登录则条状到登录
      * */
     @RequestMapping(value = "/center.html")
     public String center(Model model) {
         User user = (User) session.getAttribute("user");
         if (user != null) {//表示已经登录
-
             List<NewsData> list = newService.selectNewsByUserId(user.getUserId());
             List<CommentData> list1 = commentService.selectCommentByUser(user.getUserId());
-
             model.addAttribute("news", list);
             model.addAttribute("comment", list1);
             return "NewsAndComment";
         } else {
             NewsResult<String> result = new NewsResult<>(false, "未登录");
             model.addAttribute("result", result);
-            return "redirect:/user/index.html";
+            return "redirect:/user/login1.html";
         }
-
     }
-
 
     /*
      * 实现注册逻辑.
      * 1：优化，在极端时间中，同时注册相同Username(原数据库中没有)，会导致同时插入非法数据。
      *    解决思路：使用Redis做二级缓存，注册时先要去缓存中去查找，如果有，那么已经被注册，表示不能注册。
      *               如果没有，注册成功的时候也往redis中插入。
+     *
+     *               已经处理事务
      * */
-    @RequestMapping(value = "/toregister")
+    @PostMapping(value = "/toregister")
     public String toregister(User user, Model model) {
         user.setCreateTime(new Date());
         logger.info("############yangxin专用日志###########  注册功能模块的前台传来的注册数据：" + user);
-
         User existUser = userService.selectByName(user.getUserName());
         if (existUser != null) {//说明昵称已经存在
             NewsResult<User> register = new NewsResult<User>(false, UserRegisterEnums.DBAEXIST.getStateInfo());
@@ -155,11 +151,10 @@ public class UserController {
         }
     }
 
-
     /*
      * 忘记密码找回密码逻辑
      * */
-    @RequestMapping(value = "/toforgetpassword")
+    @PostMapping(value = "/toforgetpassword")
     public String toforgetpassword(String username, String email, String password, Model model) {
         User user = userService.selectByEmail(email, username);
         user.setUserPassword(password);
@@ -185,7 +180,7 @@ public class UserController {
     /*
      * 实现管理员登录逻辑
      * */
-    @RequestMapping(value = "/toadminLogin")
+    @PostMapping(value = "/toadminLogin")
     public String toadminLogin(String username, String password, Model model) {
         User adminuserCheck = userService.selectByName(username);
         ServletContext application = session.getServletContext();
@@ -229,14 +224,13 @@ public class UserController {
         }
     }
 
-
     /*
      * 实现登录逻辑
      *
      * 优化：1.限制用户在多个客户端登录的限制,使用application存储登录信息
      *
      * */
-    @RequestMapping(value = "/login")
+    @PostMapping(value = "/login")
     public String tologin(String username,
                           String password, Model model) {
         User userCheck = userService.selectByName(username);

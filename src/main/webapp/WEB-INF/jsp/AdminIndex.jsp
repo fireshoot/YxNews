@@ -99,7 +99,7 @@
                         <span class="dcjq-icon"></span></a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="http://localhost:8080/new/editor.html" class="dcjq-parent">
+                    <a href="http://localhost:8080/new/editor.html?index=2" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>添加文章</span>
                         <span class="dcjq-icon"></span></a>

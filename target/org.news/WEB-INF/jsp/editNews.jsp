@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-<h4 style="margin-left: 100px;margin-top: 10px">${title}插入新闻</h4>
+<h4 style="margin-left: 100px;margin-top: 10px">${title}修改新闻</h4>
 
 <div style="margin-left: 100px;margin-right: 100px;margin-top:50px;margin-bottom: 200px">
     <%

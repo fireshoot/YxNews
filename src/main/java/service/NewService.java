@@ -62,4 +62,9 @@ public interface NewService {
      * */
     List<NewsData> selectNewsByKey(String key);
 
+    /*
+     * 根据标题查询
+     * */
+    New selectNewsBytitle(String title);
+
 }

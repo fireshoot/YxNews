@@ -40,11 +40,19 @@
 <body>
 <!-- header-section-starts -->
 <div class="header">
+
+
+
     <div class="container">
         <div class="logo">
             <a href="index.html"><img src="${pageContext.request.contextPath}/resource/img/friends/fr-09.jpg"
                                       class="img-responsive" alt="" style="width: 100px; height: 100px"/></a>
+
+            <label style="margin-left: 200px;font-size: 40px;margin: 0;color: #ffffff;">看神马新闻</label>
         </div>
+
+
+
         <div class="header-right">
             <%
                 User user = (User) session.getAttribute("user");
@@ -52,7 +60,8 @@
             %>
             <h4>欢迎用户<%=user.getUserName()%>
                 <ul class="pull-right top-menu">
-                    <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>">Logout</a></li>
+                    <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>">Logout</a>
+                    </li>
                 </ul>
             </h4>
             <%
@@ -90,7 +99,9 @@
         <div class="clearfix"></div>
     </div>
 </div>
-
+<c:if test="${!result.isSuccess}">
+    <span style="color: rebeccapurple">${result.errMes}</span>
+</c:if>
 <!-- header-section-ends -->
 <div class="content">
     <div class="blog-section">
@@ -139,6 +150,19 @@
             </div>
 
             <div class="col-md-4 right_column" style="float: left;">
+
+                <div class="item2">
+                    <header>
+                        <h2 class="with-line">与我相关</h2>
+                    </header>
+                    <ul>
+                        <li><a href="http://localhost:8080/new/editor.html?index=1">添加文章</a></li>
+                        <li><a href="#">我发表的文章</a></li>
+                        <li><a href="#">我的评论</a></li>
+                        <li><a href="#">我的消息</a></li>
+                    </ul>
+                </div>
+
                 <div class="item">
                     <header>
                         <h2 class="with-line">新闻分类</h2>
@@ -152,17 +176,7 @@
                         <li><a href="#">国际</a></li>
                     </ul>
                 </div>
-                <div class="item2">
-                    <header>
-                        <h2 class="with-line">与我相关</h2>
-                    </header>
-                    <ul>
-                        <li><a href="http://localhost:8080/new/editor.html">添加文章</a></li>
-                        <li><a href="#">我发表的文章</a></li>
-                        <li><a href="#">我的评论</a></li>
-                        <li><a href="#">我的消息</a></li>
-                    </ul>
-                </div>
+
             </div>
             <div class="clearfix"></div>
         </div>
