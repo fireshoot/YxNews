@@ -4,7 +4,7 @@ import dto.*;
 import entity.Comment;
 import entity.New;
 import entity.User;
-import enums.CommentState;
+import enums.CommentEnums;
 import enums.InsertNewEnums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,12 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import service.CommentService;
 import service.NewService;
 import service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
@@ -79,7 +77,6 @@ public class NewController {
         }
     }
 
-
     @RequestMapping(value = "deletecomment")
     public String deleteComment(long commentId, String userName, Model model) {
         //  logger.info("############yangxin专用日志###########  XX功能模块的XX数据："+);
@@ -88,16 +85,16 @@ public class NewController {
         if (user.getUserType() == 2 || user.getUserId() == comment.getNewId()) {
             int i = commentService.deleteComment(commentId, user.getUserId());
             if (i <= 0) {
-                NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.FAIL.getStateInfo());
+                NewsResult<Comment> result = new NewsResult<Comment>(false, CommentEnums.FAIL.getStateInfo());
                 model.addAttribute("editResult", result);
             } else {
                 //如果不是作者本人或者是管理员那么不允许修改文章。
-                NewsResult<Comment> result = new NewsResult<Comment>(true, CommentState.SUCCESS.getStateInfo());
+                NewsResult<Comment> result = new NewsResult<Comment>(true, CommentEnums.SUCCESS.getStateInfo());
                 model.addAttribute("editResult", result);
             }
         } else {
             //如果不是作者本人或者是管理员那么不允许修改文章。
-            NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.UNOPERATION.getStateInfo());
+            NewsResult<Comment> result = new NewsResult<Comment>(false, CommentEnums.UNOPERATION.getStateInfo());
             model.addAttribute("editResult", result);
         }
         if (user.getUserType() == 2)
@@ -117,16 +114,16 @@ public class NewController {
             comment.setNewId(newId);
             comment.setUserId(user.getUserId());
             comment.setCreateTime(new Date());
-            int i = commentService.insertComment(comment);
-            if (i <= 0) {//插入失败
-                NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.INTERBUSY.getStateInfo());
+            CommentState commentState = commentService.insertComment(comment);
+            if (commentState.getState()!=1) {//插入失败
+                NewsResult<Comment> result = new NewsResult<Comment>(false, CommentEnums.INTERBUSY.getStateInfo());
                 model.addAttribute("insertComment", result);
             } else {
-                NewsResult<Comment> result = new NewsResult<Comment>(true, CommentState.SUCCESS.getStateInfo());
+                NewsResult<Comment> result = new NewsResult<Comment>(true, CommentEnums.SUCCESS.getStateInfo());
                 model.addAttribute("insertComment", result);
             }
         } else {//表示未登录
-            NewsResult<Comment> result = new NewsResult<Comment>(false, CommentState.UNLOGIN.getStateInfo());
+            NewsResult<Comment> result = new NewsResult<Comment>(false, CommentEnums.UNLOGIN.getStateInfo());
             model.addAttribute("insertComment", result);
             return "redirect:/user/login1.html";
         }
@@ -169,7 +166,6 @@ public class NewController {
                 return "editor";
             }else{
                 InsertNewState state = newService.insertNew(news);
-
                 if (state.getState() != 1) {//表示失败
                     NewsResult<New> result = new NewsResult<New>(false, state.getStateInfo());
                     model.addAttribute("insertNewResult", result);
@@ -207,9 +203,11 @@ public class NewController {
     @RequestMapping(value = "/edit")
     public String editNew(long newId, String userName, Model model) {
         User user = userService.selectByName(userName);
+        User useradmin = (User) session.getAttribute("user");
         NewDetail detail = newService.selectNew(newId);
         New news = detail.getaNew();
-        if (user.getUserType() == 2 || user.getUserId() == news.getNewId()) {
+        logger.info("############yangxin专用日志###########  修改新闻功能模块的XX数据："+user);
+        if (useradmin.getUserType() == 2 || user.getUserId() == news.getNewId()) {
             NewsResult<NewDetail> result = new NewsResult<NewDetail>(true, detail);
             model.addAttribute("editResult", result);
             return "editNews";
@@ -217,7 +215,7 @@ public class NewController {
             //如果不是作者本人或者是管理员那么不允许修改文章。
             NewsResult<New> result = new NewsResult<New>(false, InsertNewEnums.UNOPERATION.getStateinfo());
             model.addAttribute("editResult", result);
-            if (user.getUserType() == 2)
+            if (useradmin.getUserType() == 2)
                 return "redirect:/new/adminIndex.html";
             else
                 return "redirect:/user/index.html";

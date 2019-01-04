@@ -1,6 +1,7 @@
 package service;
 
 import dto.CommentData;
+import dto.CommentState;
 import entity.Comment;
 
 import java.util.List;
@@ -10,12 +11,10 @@ import java.util.List;
  * @time 2018/12/25  14:16
  */
 public interface CommentService {
-
-
     /*
     * 添加评论
     * */
-    int insertComment(Comment comment);
+    CommentState insertComment(Comment comment);
 
     /*
     * 获取文章下的评论
@@ -32,7 +31,6 @@ public interface CommentService {
      * */
     List<CommentData> selectAllComment();
 
-
     /*
      * 模糊查询
      * */
@@ -42,7 +40,6 @@ public interface CommentService {
      * 根据ID获取评论
      * */
    Comment selectCommentById(long commentId);
-
 
     /*
     * 用户自己删除自己的评论

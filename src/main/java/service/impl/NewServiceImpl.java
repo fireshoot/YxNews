@@ -12,6 +12,7 @@ import enums.InsertNewEnums;
 import exception.ContentMissException;
 import exception.InsertNewException;
 import exception.NewException;
+import exception.UpdateNewException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ import java.util.List;
  */
 @Service
 public class NewServiceImpl implements NewService {
-    private Logger logger= LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private NewDao newDao;
@@ -38,43 +39,41 @@ public class NewServiceImpl implements NewService {
     @Override
     @Transactional
     public InsertNewState insertNew(New n)
-        throws NewException, ContentMissException,InsertNewException {
-        try{
-            if(n==null){
+            throws NewException, ContentMissException, InsertNewException {
+        try {
+            if (n == null) {
                 throw new ContentMissException("插入数据不完整！");
-            }else{
-                New news=newDao.queryByNewName(n.getTitle());
-                if(news!=null){
+            } else {
+                New news = newDao.queryByNewName(n.getTitle());
+                if (news != null) {
                     return new InsertNewState(n.getNewId(), InsertNewEnums.EXIST);
-                }else{
-                    int countInsert=newDao.insertNew(n);
-                    if(countInsert<=0){
+                } else {
+                    int countInsert = newDao.insertNew(n);
+                    if (countInsert <= 0) {
                         throw new InsertNewException(InsertNewEnums.FAIL.getStateinfo());
-                    }else{
-                        return new InsertNewState(n.getNewId(),InsertNewEnums.SUCCESS,n);
+                    } else {
+                        return new InsertNewState(n.getNewId(), InsertNewEnums.SUCCESS, n);
                     }
                 }
             }
-        }
-        catch (InsertNewException e1){
-            logger.error(e1.getMessage(),e1);
+        } catch (InsertNewException e1) {
+            logger.error(e1.getMessage(), e1);
             return new InsertNewState(n.getNewId(), InsertNewEnums.FAIL);
-        }
-        catch(Exception e){
-            logger.error(e.getMessage(),e);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
             return new InsertNewState(n.getNewId(), InsertNewEnums.INNER_ERROR);
         }
     }
 
     @Override
     public NewList selectIndexNew() {
-        List<New> hotnew=newDao.queryByCategoryId(1);
-        List<New> entertail=newDao.queryByCategoryId(2);
-        List<New> tech=newDao.queryByCategoryId(3);
-        List<New> military=newDao.queryByCategoryId(4);
-        List<New> sport=newDao.queryByCategoryId(5);
-        List<New> world=newDao.queryByCategoryId(6);
-        NewList newList=new NewList();
+        List<New> hotnew = newDao.queryByCategoryId(1);
+        List<New> entertail = newDao.queryByCategoryId(2);
+        List<New> tech = newDao.queryByCategoryId(3);
+        List<New> military = newDao.queryByCategoryId(4);
+        List<New> sport = newDao.queryByCategoryId(5);
+        List<New> world = newDao.queryByCategoryId(6);
+        NewList newList = new NewList();
         newList.setHOT_NEWS(hotnew);
         newList.setENTERTAINMENT_NEWS(entertail);
         newList.setSPORT_NEWS(sport);
@@ -86,14 +85,14 @@ public class NewServiceImpl implements NewService {
 
     @Override
     public NewDetail selectNew(long newId) {
-        New news=newDao.queryByNewId(newId);
-        NewDetail detail=new NewDetail();
-        if(news!=null){
-            User user=userDao.queryByOnlyId(news.getUserId());
+        New news = newDao.queryByNewId(newId);
+        NewDetail detail = new NewDetail();
+        if (news != null) {
+            User user = userDao.queryByOnlyId(news.getUserId());
             detail.setSuccess(true);
             detail.setaNew(news);
             detail.setUser(user);
-        }else{
+        } else {
             detail.setSuccess(false);
         }
         return detail;
@@ -116,33 +115,44 @@ public class NewServiceImpl implements NewService {
      * 2.管理员删除不合格的新闻，验证用户是不是为管理员。
      * */
     @Override
-    public InsertNewState deleteNew(long newId , User user) {
-        New n=newDao.queryByNewId(newId);
-        if(n.getUserId()==user.getUserId()||user.getUserType()==2){
-            int countdelete=newDao.deleteNew(newId);
-            if(countdelete<=0){
-                return new InsertNewState(newId,InsertNewEnums.FAIL);
-            }else{
-                return new InsertNewState(newId,InsertNewEnums.SUCCESS,n);
+    public InsertNewState deleteNew(long newId, User user) {
+        New n = newDao.queryByNewId(newId);
+        if (n.getUserId() == user.getUserId() || user.getUserType() == 2) {
+            int countdelete = newDao.deleteNew(newId);
+            if (countdelete <= 0) {
+                return new InsertNewState(newId, InsertNewEnums.FAIL);
+            } else {
+                return new InsertNewState(newId, InsertNewEnums.SUCCESS, n);
             }
-        }else{
-            return new InsertNewState(newId,InsertNewEnums.UNOPERATION);
+        } else {
+            return new InsertNewState(newId, InsertNewEnums.UNOPERATION);
         }
     }
 
     @Override
-    public InsertNewState updateNews(New n) {
-        New aNew=newDao.queryByNewId(n.getNewId());
-        if(aNew==null){
-            return new InsertNewState(n.getNewId(),InsertNewEnums.NOTEXIST);
-        }else{
-            int countUpdate=newDao.updateNew(n);
-            if(countUpdate<=0){
-                return new InsertNewState(n.getNewId(),InsertNewEnums.FAIL);
-            }else{
-                return new InsertNewState(n.getNewId(),InsertNewEnums.SUCCESS,n);
+    @Transactional
+    public InsertNewState updateNews(New n)
+            throws NewException, UpdateNewException {
+        New aNew = newDao.queryByNewId(n.getNewId());
+        try {
+            if (aNew == null) {
+                return new InsertNewState(n.getNewId(), InsertNewEnums.NOTEXIST);
+            } else {
+                int countUpdate = newDao.updateNew(n);
+                if (countUpdate <= 0) {
+                    throw new UpdateNewException(InsertNewEnums.FAIL.getStateinfo());
+                } else {
+                    return new InsertNewState(n.getNewId(), InsertNewEnums.SUCCESS, n);
+                }
             }
+        } catch (UpdateNewException e1) {
+            logger.error(e1.getMessage(), e1);
+            return new InsertNewState(n.getNewId(), InsertNewEnums.FAIL);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return new InsertNewState(n.getNewId(), InsertNewEnums.INNER_ERROR);
         }
+
     }
 
     @Override

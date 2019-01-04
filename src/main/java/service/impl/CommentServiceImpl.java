@@ -2,7 +2,11 @@ package service.impl;
 
 import dao.CommentDao;
 import dto.CommentData;
+import dto.CommentState;
 import entity.Comment;
+import enums.CommentEnums;
+import exception.CommentException;
+import exception.CommentInsertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,20 +21,31 @@ import java.util.List;
  */
 @Service
 public class CommentServiceImpl implements CommentService {
-    private Logger logger= LoggerFactory.getLogger(this.getClass());
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private CommentDao commentDao;
 
     @Override
-    public int insertComment(Comment comment) {
-        if(comment!=null){
-            int count=commentDao.insertComment(comment);
-            if(count<=0)
-                return 0;
-            return 1;
+    public CommentState insertComment(Comment comment)
+            throws CommentException, CommentInsertException {
+        try {
+            if (comment != null) {
+                int count = commentDao.insertComment(comment);
+                if (count <= 0)
+                    throw new CommentInsertException(CommentEnums.INSERTFAIL.getStateInfo());
+                return new CommentState(comment.getCommentId(), CommentEnums.SUCCESS, comment);
+            } else {
+                return new CommentState(comment.getCommentId(), CommentEnums.ERROR);
+            }
+        } catch (CommentInsertException e1) {
+            logger.error(e1.getMessage(), e1);
+            return new CommentState(comment.getCommentId(), CommentEnums.INSERTFAIL);
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            return new CommentState(comment.getCommentId(), CommentEnums.INSERTFAIL);
         }
-        return 0;
+
     }
 
     @Override
@@ -60,14 +75,14 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public int deleteComment(long commentId, long userId) {
-        Comment comment=commentDao.queryCommentById(commentId);
-        if(comment!=null){
-            if(comment.getUserId()==userId){
-                int count=commentDao.deleteComment(commentId,userId);
-                if(count<=0)
+        Comment comment = commentDao.queryCommentById(commentId);
+        if (comment != null) {
+            if (comment.getUserId() == userId) {
+                int count = commentDao.deleteComment(commentId, userId);
+                if (count <= 0)
                     return 0;
                 return 1;
-            }else{
+            } else {
                 return 0;
             }
         }
