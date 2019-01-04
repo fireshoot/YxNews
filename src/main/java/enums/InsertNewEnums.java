@@ -10,7 +10,9 @@ public enum InsertNewEnums {
     NOTEXIST(-1,"文章不存在"),
     FAIL(-2,"操作失败"),
     UNOPERATION(-3,"无权限"),
+    INNER_ERROR(-1,"系统异常"),
     UNLOGIN(-10,"未登录"),
+
     ;
 
     private int state;

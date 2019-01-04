@@ -171,7 +171,7 @@ public class UserController {
                 return "login";
             }
         } else {
-            NewsResult<User> forget = new NewsResult<User>(false, "不存在此用户");
+            NewsResult<User> forget = new NewsResult<User>(false, UserRegisterEnums.NOTEXIST.getStateInfo());
             model.addAttribute("result", forget);
             return "ForgetPassword";
         }

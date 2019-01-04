@@ -10,11 +10,13 @@ import entity.New;
 import entity.User;
 import enums.InsertNewEnums;
 import exception.ContentMissException;
+import exception.InsertNewException;
 import exception.NewException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import service.NewService;
 
 import java.util.List;
@@ -34,23 +36,33 @@ public class NewServiceImpl implements NewService {
     private UserDao userDao;
 
     @Override
+    @Transactional
     public InsertNewState insertNew(New n)
-        throws NewException, ContentMissException {
-        if(n==null){
-            throw new ContentMissException("插入数据不完整！");
-        }else{
-            New news=newDao.queryByNewName(n.getTitle());
-            if(news!=null){
-                return new InsertNewState(n.getNewId(), InsertNewEnums.EXIST);
+        throws NewException, ContentMissException,InsertNewException {
+        try{
+            if(n==null){
+                throw new ContentMissException("插入数据不完整！");
             }else{
-                int countInsert=newDao.insertNew(n);
-                if(countInsert<=0){
-                    return new InsertNewState(n.getNewId(), InsertNewEnums.FAIL);
+                New news=newDao.queryByNewName(n.getTitle());
+                if(news!=null){
+                    return new InsertNewState(n.getNewId(), InsertNewEnums.EXIST);
                 }else{
-                    return new InsertNewState(n.getNewId(),InsertNewEnums.SUCCESS,n);
+                    int countInsert=newDao.insertNew(n);
+                    if(countInsert<=0){
+                        throw new InsertNewException(InsertNewEnums.FAIL.getStateinfo());
+                    }else{
+                        return new InsertNewState(n.getNewId(),InsertNewEnums.SUCCESS,n);
+                    }
                 }
             }
-
+        }
+        catch (InsertNewException e1){
+            logger.error(e1.getMessage(),e1);
+            return new InsertNewState(n.getNewId(), InsertNewEnums.FAIL);
+        }
+        catch(Exception e){
+            logger.error(e.getMessage(),e);
+            return new InsertNewState(n.getNewId(), InsertNewEnums.INNER_ERROR);
         }
     }
 

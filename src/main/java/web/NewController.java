@@ -79,6 +79,7 @@ public class NewController {
         }
     }
 
+
     @RequestMapping(value = "deletecomment")
     public String deleteComment(long commentId, String userName, Model model) {
         //  logger.info("############yangxin专用日志###########  XX功能模块的XX数据："+);
@@ -110,7 +111,6 @@ public class NewController {
         logger.info("*************提交评论获取内容：" + commentContent + newId);
         User user = (User) session.getAttribute("user");
         logger.info("**************目前是否登录：" + user);
-
         if (user != null) {//目前已经登录
             Comment comment = new Comment();
             comment.setContent(commentContent);
@@ -177,7 +177,9 @@ public class NewController {
                 } else {
                     NewsResult<New> result = new NewsResult<New>(true, news);
                     model.addAttribute("insertNewResult", result);
+                    if(user.getUserType()==2)
                     return "redirect:/new/adminIndex.html";
+                    return "redirect:/user/index.html";
                 }
             }
         } else {
