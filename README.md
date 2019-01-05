@@ -9,19 +9,17 @@
 5.	如果你对此感兴趣，你可以start支持一下。
 6.	或者你有更好的建议可以在Issue中提起，我个人擅长于java开发，对前端做得比较烂。
 7.	我对此的博客地址：https://www.cnblogs.com/yangdagaoge/category/1374971.html。有什么需要帮助的可以QQ我：823721670.
-目录结构说明
-	1.YxNews
-		├── .idea – IDEA生成的参数
-		├── imagesTest – 项目截图
-		├── src – 项目主体
-		├── target—项目生成文件
-		├── .git*、README.md、YxNews.iml—git生成文件
-		└── pom.xml – 项目的依赖配置文件
-	2.  
-项目介绍
+
+
+# 目录结构说明
+	![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/14.png)
+	![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/13.png)
+	
+	
+# 项目介绍
 	YxNews是一套新闻发布系统。前台包含首页新闻门户、新闻推荐、新闻展示、个人中心的管理、后台包含是：所有新闻的管理、评论的管理、用户的上线控制的管理。
 
-项目演示：
+# 项目演示：
 	要是我的服务器没蹦的话，就可以给演示地址了。抱歉了大家。
 ![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/1.png)
 ![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/2.png)
