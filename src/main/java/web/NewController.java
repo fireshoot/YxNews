@@ -81,8 +81,9 @@ public class NewController {
     public String deleteComment(long commentId, String userName, Model model) {
         //  logger.info("############yangxin专用日志###########  XX功能模块的XX数据："+);
         User user = userService.selectByName(userName);
+        User login= (User) session.getAttribute("user");
         Comment comment = commentService.selectCommentById(commentId);
-        if (user.getUserType() == 2 || user.getUserId() == comment.getNewId()) {
+        if (login.getUserType() == 2 || user.getUserId() == login.getUserId()) {
             int i = commentService.deleteComment(commentId, user.getUserId());
             if (i <= 0) {
                 NewsResult<Comment> result = new NewsResult<Comment>(false, CommentEnums.FAIL.getStateInfo());
@@ -97,8 +98,8 @@ public class NewController {
             NewsResult<Comment> result = new NewsResult<Comment>(false, CommentEnums.UNOPERATION.getStateInfo());
             model.addAttribute("editResult", result);
         }
-        if (user.getUserType() == 2)
-            return "redirect:/new/adminIndex.html";
+        if (login.getUserType() == 2)
+            return "redirect:/new/commentlist.html";
         else
             return "redirect:/user/index.html";
     }
@@ -186,7 +187,7 @@ public class NewController {
     }
 
     @RequestMapping(value = "/delete")
-    public String delete(long newId, String userName, Model model) {
+    public String delete(long newId, String userName,int tag, Model model) {
         logger.info("****************" + newId + "," + userName);
         User user = userService.selectByName(userName);
         InsertNewState state = newService.deleteNew(newId, user);
@@ -197,7 +198,9 @@ public class NewController {
             NewsResult<New> result = new NewsResult<New>(true, state.getStateInfo());
             model.addAttribute("result", result);
         }
-        return "redirect:/new/adminIndex.html";
+        if(tag==1)
+            return "redirect:/user/center.html";
+            return "redirect:/new/adminIndex.html";
     }
 
     @RequestMapping(value = "/edit")
@@ -207,7 +210,7 @@ public class NewController {
         NewDetail detail = newService.selectNew(newId);
         New news = detail.getaNew();
         logger.info("############yangxin专用日志###########  修改新闻功能模块的XX数据："+user);
-        if (useradmin.getUserType() == 2 || user.getUserId() == news.getNewId()) {
+        if (useradmin.getUserType() == 2 || user.getUserId() == useradmin.getUserId()) {
             NewsResult<NewDetail> result = new NewsResult<NewDetail>(true, detail);
             model.addAttribute("editResult", result);
             return "editNews";
@@ -306,6 +309,17 @@ public class NewController {
         else{
             return "redirect:/new/adminIndex.html";
         }
+    }
+
+    /*
+     * 实现强制下线
+     * */
+    @RequestMapping(value = "/ForceLogout")
+    public String ForceLogout(String userName, Model model) {
+        //userService.ForceLogout(userName);
+        NewsResult<User> result = new NewsResult<User>(true, "注销成功");
+        model.addAttribute("resultLogout", result);
+        return "redirect:/new/userlist.html";
     }
 
 }

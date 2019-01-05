@@ -22,14 +22,70 @@
     <!--webfont-->
     <link href='http://fonts.useso.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
           rel='stylesheet' type='text/css'>
+    <style>
+        .btn-success {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+        }
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+        .btn-danger {
+            color: #fff;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+        }
+    </style>
+
 </head>
 <body>
+
+
+<div class="col-md-4 right_column" style="margin-left: 60px">
+    <div class="item2">
+        <header>
+            <h2 class="with-line">与我相关</h2>
+        </header>
+        <ul>
+            <li style="float: left"><a href="http://localhost:8080/user/index.html">首页</a></li>
+            <li style="float: left"><a href="http://localhost:8080/new/editor.htmlindex=1">添加文章</a></li>
+            <li style="float: left"><a href="#">我发表的文章和评论</a></li>
+        </ul>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+
 
 
 <!--sidebar end-->
 <!--main content start-->
 <section id="main-content33">
-    <div class="mt" style="margin-right: 5px;margin-left: 5px;margin-top: 5px;margin-bottom: 5px">
+    <div class="mt" style="margin-right: 5px;margin-left: 5px;margin-top: -555px;margin-bottom: 5px">
         <div class="col-md-12">
             <%-- <div style="color: rebeccapurple">${result}</div>--%>
             <div class="content-panel">
@@ -69,7 +125,7 @@
                                     <button class="btn btn-primary"><i class="fa fa-pencil">修改
                                     </i></button>
                                 </a>
-                                <a href="/new/delete?newId=${news.aNew.newId}&userName=${news.userName}">
+                                <a href="/new/delete?newId=${news.aNew.newId}&userName=${news.userName}&tag=1">
                                     <button class="btn btn-danger">
                                         <i class="fa fa-trash-o ">
                                             删除</i></button>
@@ -147,35 +203,6 @@
 <!--main content end-->
 <!--footer start-->
 </div>
-
-<div class="col-md-4 right_column" style="float: right;">
-    <div class="item">
-        <header>
-            <h2 class="with-line">新闻分类</h2>
-        </header>
-        <ul>
-            <li><a href="#">热点</a></li>
-            <li><a href="#">娱乐</a></li>
-            <li><a href="#">科技</a></li>
-            <li><a href="#">军事</a></li>
-            <li><a href="#">体育</a></li>
-            <li><a href="#">国际</a></li>
-        </ul>
-    </div>
-    <div class="item2">
-        <header>
-            <h2 class="with-line">与我相关</h2>
-        </header>
-        <ul>
-            <li><a href="http://localhost:8080/new/editor.html">添加文章</a></li>
-            <li><a href="#">我发表的文章</a></li>
-            <li><a href="#">我的评论</a></li>
-            <li><a href="#">我的消息</a></li>
-        </ul>
-    </div>
-</div>
-<div class="clearfix"></div>
-
 
 <div class="footer text-center">
     <div class="copyright">

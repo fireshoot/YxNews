@@ -46,6 +46,11 @@ public interface UserService {
     void ForceLogout(String UserName);
 
     /*
+     * 主动下线
+     * */
+    void Logout(String UserName);
+
+    /*
     * 查询所有用户信息
     * */
     List<User> selectAllUser();

@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 1.添加mysql信息-->
-    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:property-placeholder location="classpath:jdbclocal.properties"/>
     <!-- 2.配置c3p0-->
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">

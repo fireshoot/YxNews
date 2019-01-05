@@ -160,7 +160,7 @@
                                 <td><fmt:formatDate value="${user.createTime}"
                                                     pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate></td>
                                 <td>
-                                    <a href="">
+                                    <a href="http://localhost:8080/new/ForceLogout?userName=${user.userName}">
                                         <button class="btn btn-success">
                                             <i class="fa fa-check">
                                                下线</i></button>

@@ -182,7 +182,7 @@
                                         <button class="btn btn-primary"><i class="fa fa-pencil">修改
                                         </i></button>
                                     </a>
-                                    <a href="/new/delete?newId=${news.aNew.newId}&userName=${news.userName}">
+                                    <a href="/new/delete?newId=${news.aNew.newId}&userName=${news.userName}&tag=2">
                                         <button class="btn btn-danger">
                                             <i class="fa fa-trash-o ">
                                                 删除</i></button>

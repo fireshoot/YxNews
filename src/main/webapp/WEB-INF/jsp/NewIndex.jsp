@@ -81,8 +81,8 @@
             <div class="top-menu">
                 <ul>
                     <li><a class="active" href="#">新闻主页</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
+                    <li><a href="https://www.cnblogs.com/yangdagaoge/">About Us</a></li>
+                    <li><a href="https://github.com/fireshoot/YxNews">Services</a></li>
                     <li><a href="http://localhost:8080/user/center.html">个人中心</a></li>
                 </ul>
             </div>
@@ -111,8 +111,6 @@
                 <c:forEach var="data" items="${newData}">
                     <article class="clearfix">
                         <header class="grid_8 alpha">
-                            <div class="head_element"><span class="el_1">07</span><span class="el_2">May</span>
-                            </div>
                             <div class="sub">
                                 <a href="/new/detail?newId=${data.aNew.newId}"
                                    class="readblog">${data.aNew.title}</a>
@@ -157,9 +155,9 @@
                     </header>
                     <ul>
                         <li><a href="http://localhost:8080/new/editor.html?index=1">添加文章</a></li>
-                        <li><a href="#">我发表的文章</a></li>
-                        <li><a href="#">我的评论</a></li>
-                        <li><a href="#">我的消息</a></li>
+                        <li><a href="http://localhost:8080/user/center.html">我发表的文章</a></li>
+                        <li><a href="http://localhost:8080/user/center.html">我的评论</a></li>
+                        <li><a href="http://localhost:8080/user/center.html">我的消息</a></li>
                     </ul>
                 </div>
 

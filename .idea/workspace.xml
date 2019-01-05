@@ -7,7 +7,419 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df32a22-40ae-493c-9c75-8d42d68bc1a6" name="Default Changelist" comment="用户登录注册页面功能，管理员登录功能完成">
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbclocal.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/NewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/NewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexUser.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexUser.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewIndex.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewIndex.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewsAndComment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewsAndComment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/black.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/black.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/spring/springDao-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/springDao-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/META-INF/YxNews.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/jdbc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/mapper/CommentDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/mapper/NewDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/mapper/UserDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/mybatis/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/spring/springDao-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/spring/springService-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/classes/spring/springWeb-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/AdminIndex.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/AdminIndexComment.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/AdminIndexUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/AdminLogin.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/ForgetPassword.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/NewIndex.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/NewsAndComment.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/black.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/common/commentlist.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/common/header.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/common/newlist.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/common/tag.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/editNews.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/editor.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/newsdetail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/jsp/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/bootstrap-wysihtml5/bootstrap-wysihtml5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/bootstrap-wysihtml5/bootstrap-wysihtml5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/bootstrap-wysihtml5/wysihtml5-0.3.0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/style-responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/style2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/summernote.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/table-responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/to-do.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/css/zabuto_calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/Untitled-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/blog-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/book.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/c1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/c2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/c3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/c4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/checkbox-gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/friends/fr-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/img-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-1_img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-1_img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-1_img-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-1_img-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-1_img-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-3_img-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-3_img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/index-3_img-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/instagram.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/login-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/lorde.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/mem.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/nav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/ny.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/p1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/p2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/p3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/portfolio/port01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/portfolio/port02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/portfolio/port03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/portfolio/port04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/portfolio/port05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/portfolio/port06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/product.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/profile-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/profile-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/radio-gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/subscribe-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/t-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/ui-danro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/ui-divya.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/ui-sam.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/ui-sherman.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/ui-zac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/weather.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/img/zoom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/bootstrap-daterangepicker/date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/bootstrap-daterangepicker/daterangepicker-bs3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/bootstrap-daterangepicker/daterangepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/bootstrap-daterangepicker/daterangepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/bootstrap-daterangepicker/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/bootstrap-inputmask/bootstrap-inputmask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/common-scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/form-component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/jquery-ui-1.9.2.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/lib/jquery.dcjqaccordion.2.7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/newIndex/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/newIndex/css/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/newIndex/js/jquery.flexisel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/newIndex/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/newIndex/js/owl.carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/script/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/script/summernote.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/script/summernote.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/script/tasks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/script/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/anchor/anchor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/attachment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/attachment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/attachment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_chm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_default.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_doc.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_exe.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_mp3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_mv.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_pdf.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_ppt.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_psd.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_rar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_txt.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/fileTypeImages/icon_xls.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/alignicon.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/alignicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/file-icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/file-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/attachment/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/background/background.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/background/background.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/background/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/background/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/background/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/chart.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/charts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/charts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/images/charts0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/images/charts1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/images/charts2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/images/charts3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/images/charts4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/charts/images/charts5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/emotion.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/emotion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/emotion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/0.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/bface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/cface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/fface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/jxface2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/neweditor-tab-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/tface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/wface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/emotion/images/yface.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/gmap/gmap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/help/help.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/help/help.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/help/help.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/image.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/image.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/alignicon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/image/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/insertframe/insertframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/internal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/link/link.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/map/map.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/map/show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/music/music.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/music/music.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/music/music.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/preview/preview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/addimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/brush.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/delimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/delimgH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/emptyH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/eraser.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/redo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/redoH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/scale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/scaleH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/size.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/undo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/images/undoH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/scrawl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/scrawl.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/scrawl/scrawl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/searchreplace/searchreplace.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/searchreplace/searchreplace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/snapscreen/snapscreen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/spechars/spechars.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/spechars/spechars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/table/dragicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/table/edittable.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/table/edittable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/table/edittable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/table/edittd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/table/edittip.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/images/bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/images/pre0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/images/pre1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/images/pre2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/images/pre3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/images/pre4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/template.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/template/template.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/center_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/file-icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/file-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/left_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/none_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/progress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/right_focus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/images/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/video.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/video.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/video/video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/webapp/webapp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/wordimage/fClipboard_ueditor.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/wordimage/imageUploader.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/wordimage/tangram.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/wordimage/wordimage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/dialogs/wordimage/wordimage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/jsp/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/jsp/controller.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/addimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/alldeletebtnhoverskin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/alldeletebtnupskin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/deletedisable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/deleteenable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/listbackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/localimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/rotateleftdisable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/rotateleftenable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/rotaterightdisable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/rotaterightenable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/en/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/zh-cn/images/copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/zh-cn/images/localimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/zh-cn/images/music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/zh-cn/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/lang/zh-cn/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/css/ueditor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/css/ueditor.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/dialogbase.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/anchor.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/arrow_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/arrow_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/button-bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/cancelbutton.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/charts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/cursor_h.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/cursor_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/cursor_v.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/cursor_v.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/dialog-title-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/filescan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/highlighted.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/icons-all.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/icons.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/loaderror.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/lock.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/neweditor-tab-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/pagebreak.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/scale.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/sortable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/spacer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/sparator_v.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/table-cell-align.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/tangram-colorpicker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/toolbar_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/unhighlighted.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/upload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/videologo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/word.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/default/images/wordpaste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/themes/iframe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/SyntaxHighlighter/shCore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/SyntaxHighlighter/shCoreDefault.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/adapters/mootools-adapter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/adapters/mootools-adapter.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/adapters/prototype-adapter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/adapters/prototype-adapter.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/adapters/standalone-framework.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/adapters/standalone-framework.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/annotations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/annotations.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/canvas-tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/canvas-tools.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/exporting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/heatmap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/map.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/themes/dark-blue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/themes/dark-green.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/themes/gray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/themes/grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/highcharts/themes/skies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/jquery-1.10.2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/jquery-1.10.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/jquery-1.10.2.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/snapscreen/UEditorSnapscreen.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/font/vjs.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/font/vjs.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/font/vjs.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/font/vjs.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/video-js.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/video-js.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/video-js.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/video.dev.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/video-js/video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/Uploader.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.flashonly.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.flashonly.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.html5only.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.html5only.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.withoutimage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/webuploader/webuploader.withoutimage.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/xss.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/zeroclipboard/ZeroClipboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/zeroclipboard/ZeroClipboard.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/third-party/zeroclipboard/ZeroClipboard.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/ueditor.all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/ueditor.all.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/ueditor.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/ueditor.parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/org.news/resource/ueditor/ueditor.parse.min.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,15 +430,102 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="-134">
+              <caret line="216" column="27" lean-forward="true" selection-start-line="216" selection-start-column="27" selection-end-line="216" selection-end-column="27" />
               <folding>
-                <element signature="method#deleteComment#0;class#CommentServiceImpl#0" />
+                <element signature="method#index#0;class#UserController#0" />
+                <element signature="method#center#0;class#UserController#0" />
+                <element signature="method#toregister#0;class#UserController#0" />
+                <element signature="method#toforgetpassword#0;class#UserController#0" />
+                <element signature="method#tologin#0;class#UserController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/web/NewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="315" column="9" lean-forward="true" selection-start-line="315" selection-start-column="9" selection-end-line="315" selection-end-column="9" />
+              <folding>
+                <element signature="method#adminIndex#0;class#NewController#0" />
+                <element signature="method#commentlist#0;class#NewController#0" />
+                <element signature="method#userlist#0;class#NewController#0" />
+                <element signature="method#deleteComment#0;class#NewController#0" />
+                <element signature="method#submitComment#0;class#NewController#0" />
+                <element signature="method#editor#0;class#NewController#0" />
+                <element signature="method#detail#0;class#NewController#0" />
+                <element signature="method#toSubmit#0;class#NewController#0" />
+                <element signature="method#delete#0;class#NewController#0" />
+                <element signature="method#editNew#0;class#NewController#0" />
+                <element signature="method#toupdate#0;class#NewController#0" />
+                <element signature="method#selectNewsByLike#0;class#NewController#0" />
+                <element signature="method#selectCommentByLike#0;class#NewController#0" />
+                <element signature="method#selectUserByLike#0;class#NewController#0" />
+                <element signature="method#selectByKey#0;class#NewController#0" />
+                <element signature="e#12596#12602#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="154" column="48" lean-forward="true" selection-start-line="154" selection-start-column="48" selection-end-line="154" selection-end-column="48" />
+              <folding>
+                <element signature="method#updateUser#0;class#UserServiceImpl#0" />
+                <element signature="method#getSalt#0;class#UserServiceImpl#0" />
+                <element signature="method#Logout#0;class#UserServiceImpl#0" />
+                <element signature="e#5570#5600#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/NewService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/NewServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="119" column="33" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="33" />
+              <folding>
+                <element signature="method#insertNew#0;class#NewServiceImpl#0" />
+                <element signature="method#selectIndexNew#0;class#NewServiceImpl#0" />
+                <element signature="method#selectNew#0;class#NewServiceImpl#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="184" column="97" selection-start-line="184" selection-start-column="93" selection-end-line="184" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -45,9 +544,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Normal text</find>
-      <find>dropdown</find>
-      <find>li.dropdown</find>
       <find>open</find>
       <find>editor</find>
       <find>wysihtml5</find>
@@ -73,8 +569,11 @@
       <find>sub-menu dcjq-parent-li</find>
       <find>sub-menu</find>
       <find>c:if</find>
-      <find>.content-panel</find>
       <find>.form-panel</find>
+      <find>.right_column li a</find>
+      <find>.content-panel</find>
+      <find>.right_column li</find>
+      <find>2 || user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,20 +583,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style2.css" />
-        <option value="$PROJECT_DIR$/src/main/java/exception/UserInsertException.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/script/register.js" />
-        <option value="$PROJECT_DIR$/src/main/java/Listenner/SessionListener.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminLogin.jsp" />
         <option value="$PROJECT_DIR$/src/test/java/dao/RedisDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/filter/LoginFilter.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/newlist.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/entity/New.java" />
         <option value="$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/test/java/dao/NewDaoTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/dao/UserDao.java" />
@@ -109,11 +602,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editNews.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dto/NewsResult.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewsAndComment.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewIndex.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexComment.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexUser.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/dto/NewsData.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/ForgetPassword.jsp" />
@@ -122,19 +610,30 @@
         <option value="$PROJECT_DIR$/src/main/java/enums/CommentState.java" />
         <option value="$PROJECT_DIR$/src/main/java/enums/UserRegisterEnums.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/UserUpdateException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/web/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/enums/InsertNewEnums.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/InsertNewException.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/UpdateNewException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/impl/NewServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/dto/CommentState.java" />
-        <option value="$PROJECT_DIR$/src/main/java/web/NewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/CommentException.java" />
         <option value="$PROJECT_DIR$/src/main/java/exception/CommentInsertException.java" />
         <option value="$PROJECT_DIR$/src/main/java/enums/CommentEnums.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/CommentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbclocal.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style2.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewIndex.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewsAndComment.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resource/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexComment.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexUser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/service/impl/NewServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/web/NewController.java" />
       </list>
     </option>
   </component>
@@ -152,6 +651,17 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="org.news Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="225" />
     <option name="y" value="20" />
@@ -166,6 +676,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -198,23 +709,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YxNews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
-              <item name="YxNews" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="YxNews" type="b2602c69:ProjectViewProjectNode" />
@@ -244,13 +739,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546577846863" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546652477872" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="H:/ApplicationPath/TomCat/apache-tomcat-8.5.24/webapps/YxNews" />
@@ -266,22 +760,22 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="dao" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\resources" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\newIndex" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\ueditor" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\lib" />
+      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\script" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\WEB-INF\jsp\common" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\img" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\css" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\WEB-INF\lib" />
       <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\ueditor" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\newIndex" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\ueditor" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\lib" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource\script" />
-      <recent name="I:\WorkSpace\Github\YxNews\src\main\webapp\resource" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -511,7 +1005,10 @@
       <workItem from="1546512953066" duration="1211000" />
       <workItem from="1546514957735" duration="4931000" />
       <workItem from="1546522375340" duration="3517000" />
-      <workItem from="1546564757877" duration="11972000" />
+      <workItem from="1546564757877" duration="12589000" />
+      <workItem from="1546581710657" duration="1451000" />
+      <workItem from="1546592248389" duration="11424000" />
+      <workItem from="1546650534307" duration="1782000" />
     </task>
     <servers />
   </component>
@@ -548,7 +1045,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200818000" />
+    <option name="totallyTimeSpent" value="216092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,7 +1060,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21179625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21983914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -573,7 +1070,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.22096318" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.21954674" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.31161472" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -591,7 +1088,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.3297587" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" />
@@ -606,71 +1103,15 @@
     <MESSAGE value="用户登录注册页面功能，管理员登录功能完成" />
     <option name="LAST_COMMIT_MESSAGE" value="用户登录注册页面功能，管理员登录功能完成" />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/script/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/New.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" selection-start-line="17" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dao/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dao/NewDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/dao/CommentDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/sql/schem.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -692,39 +1133,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewsAndComment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="158" column="80" selection-start-line="158" selection-start-column="75" selection-end-line="158" selection-end-column="80" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#!!top" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#body#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="96" column="41" lean-forward="true" selection-start-line="96" selection-start-column="41" selection-end-line="96" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexComment.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
         </state>
       </provider>
     </entry>
@@ -836,13 +1244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editNews.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/enums/InsertNewEnums.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -863,54 +1264,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/NewServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="145" column="17" lean-forward="true" selection-start-line="145" selection-start-column="17" selection-end-line="145" selection-end-column="17" />
-          <folding>
-            <element signature="method#insertNew#0;class#NewServiceImpl#0" />
-            <element signature="method#selectIndexNew#0;class#NewServiceImpl#0" />
-            <element signature="method#selectNew#0;class#NewServiceImpl#0" />
-            <element signature="method#deleteNew#0;class#NewServiceImpl#0" />
-            <element signature="e#4080#4081#0" expanded="true" />
-            <element signature="e#4127#4128#0" expanded="true" />
-            <element signature="e#4198#4199#0" expanded="true" />
-            <element signature="e#4249#4250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/NewService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="182" column="53" lean-forward="true" selection-start-line="182" selection-start-column="53" selection-end-line="182" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="183" column="78" selection-start-line="183" selection-start-column="78" selection-end-line="183" selection-end-column="78" />
-          <folding>
-            <element signature="method#index#0;class#UserController#0" />
-            <element signature="method#center#0;class#UserController#0" />
-            <element signature="method#toregister#0;class#UserController#0" />
-            <element signature="method#toforgetpassword#0;class#UserController#0" />
-            <element signature="e#5342#5348#0" expanded="true" />
-            <element signature="method#toadminLogin#0;class#UserController#0" />
-            <element signature="method#tologin#0;class#UserController#0" />
-            <element signature="method#Logout#0;class#UserController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dto/ResgisterState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -918,16 +1271,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/enums/CommentState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="method#stateof#0;class#CommentState#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/enums/CommentState.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dto/CommentState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -997,50 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/web/NewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="106" column="80" selection-start-line="106" selection-start-column="80" selection-end-line="106" selection-end-column="80" />
-          <folding>
-            <element signature="method#adminIndex#0;class#NewController#0" />
-            <element signature="method#commentlist#0;class#NewController#0" />
-            <element signature="method#userlist#0;class#NewController#0" />
-            <element signature="method#deleteComment#0;class#NewController#0" />
-            <element signature="e#2941#2950#0" expanded="true" />
-            <element signature="method#submitComment#0;class#NewController#0" />
-            <element signature="method#editor#0;class#NewController#0" />
-            <element signature="method#detail#0;class#NewController#0" />
-            <element signature="method#delete#0;class#NewController#0" />
-            <element signature="method#editNew#0;class#NewController#0" />
-            <element signature="method#toupdate#0;class#NewController#0" />
-            <element signature="method#selectNewsByLike#0;class#NewController#0" />
-            <element signature="method#selectCommentByLike#0;class#NewController#0" />
-            <element signature="method#selectUserByLike#0;class#NewController#0" />
-            <element signature="method#selectByKey#0;class#NewController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="49" column="18" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="18" />
-          <folding>
-            <element signature="method#login#0;class#UserServiceImpl#0" />
-            <element signature="method#updateUser#0;class#UserServiceImpl#0" />
-            <element signature="method#getSalt#0;class#UserServiceImpl#0" />
-            <element signature="method#ForceLogout#0;class#UserServiceImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exception/NewException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -1054,6 +1354,184 @@
           <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding>
             <element signature="method#deleteComment#0;class#CommentServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sql/schem.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="62" column="43" lean-forward="true" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbclocal.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springDao-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="6" column="52" lean-forward="true" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
+          <folding>
+            <element signature="e#733#749#0" expanded="true" />
+            <element signature="e#801#814#0" expanded="true" />
+            <element signature="e#863#877#0" expanded="true" />
+            <element signature="e#930#948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/black.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/style2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="1047" column="28" lean-forward="true" selection-start-line="1047" selection-start-column="28" selection-end-line="1047" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="169" column="24" lean-forward="true" selection-start-line="169" selection-start-column="24" selection-end-line="169" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="1090" column="19" lean-forward="true" selection-start-line="1090" selection-start-column="19" selection-end-line="1090" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/NewsAndComment.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="186" column="66" lean-forward="true" selection-start-line="186" selection-start-column="66" selection-end-line="186" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editor.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/editNews.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="216" column="27" lean-forward="true" selection-start-line="216" selection-start-column="27" selection-end-line="216" selection-end-column="27" />
+          <folding>
+            <element signature="method#index#0;class#UserController#0" />
+            <element signature="method#center#0;class#UserController#0" />
+            <element signature="method#toregister#0;class#UserController#0" />
+            <element signature="method#toforgetpassword#0;class#UserController#0" />
+            <element signature="method#tologin#0;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndexComment.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="160" column="63" selection-start-line="160" selection-start-column="50" selection-end-line="160" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/NewService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/AdminIndex.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="184" column="97" selection-start-line="184" selection-start-column="93" selection-end-line="184" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/NewServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="119" column="33" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="33" />
+          <folding>
+            <element signature="method#insertNew#0;class#NewServiceImpl#0" />
+            <element signature="method#selectIndexNew#0;class#NewServiceImpl#0" />
+            <element signature="method#selectNew#0;class#NewServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="154" column="48" lean-forward="true" selection-start-line="154" selection-start-column="48" selection-end-line="154" selection-end-column="48" />
+          <folding>
+            <element signature="method#updateUser#0;class#UserServiceImpl#0" />
+            <element signature="method#getSalt#0;class#UserServiceImpl#0" />
+            <element signature="method#Logout#0;class#UserServiceImpl#0" />
+            <element signature="e#5570#5600#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/NewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="315" column="9" lean-forward="true" selection-start-line="315" selection-start-column="9" selection-end-line="315" selection-end-column="9" />
+          <folding>
+            <element signature="method#adminIndex#0;class#NewController#0" />
+            <element signature="method#commentlist#0;class#NewController#0" />
+            <element signature="method#userlist#0;class#NewController#0" />
+            <element signature="method#deleteComment#0;class#NewController#0" />
+            <element signature="method#submitComment#0;class#NewController#0" />
+            <element signature="method#editor#0;class#NewController#0" />
+            <element signature="method#detail#0;class#NewController#0" />
+            <element signature="method#toSubmit#0;class#NewController#0" />
+            <element signature="method#delete#0;class#NewController#0" />
+            <element signature="method#editNew#0;class#NewController#0" />
+            <element signature="method#toupdate#0;class#NewController#0" />
+            <element signature="method#selectNewsByLike#0;class#NewController#0" />
+            <element signature="method#selectCommentByLike#0;class#NewController#0" />
+            <element signature="method#selectUserByLike#0;class#NewController#0" />
+            <element signature="method#selectByKey#0;class#NewController#0" />
+            <element signature="e#12596#12602#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -284,7 +284,7 @@ public class UserController {
     @RequestMapping(value = "/Logout")
     public String Logout(String userName, Model model) {
         User usercheckLog = userService.selectByName(userName);
-        userService.ForceLogout(userName);
+        userService.Logout(userName);
         NewsResult<User> result = new NewsResult<User>(true, "注销成功");
         model.addAttribute("resultLogout", result);
         logger.info("############yangxin专用日志###########  注销功能模块的正常");
@@ -292,5 +292,8 @@ public class UserController {
             return "redirect:/user/adminLogin.html";
         return "redirect:/user/login1.html";
     }
+
+
+
 
 }
