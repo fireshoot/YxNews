@@ -228,6 +228,7 @@ public class NewController {
     @RequestMapping(value = "/update")
     public String toupdate(New news, Model model) {
         User user = (User) session.getAttribute("user");
+     //   User useradmin = (User) session.getAttribute("user");
         if (user != null) {
             news.setUserId(user.getUserId());
             InsertNewState state = newService.updateNews(news);
@@ -238,6 +239,8 @@ public class NewController {
             } else {
                 NewsResult<New> newNewsResult = new NewsResult<New>(true, news);
                 model.addAttribute("updateResult", newNewsResult);
+                if(user.getUserType()!=2)
+                    return "redirect:/user/center.html";
                 return "redirect:/new/adminIndex.html";
             }
         } else {

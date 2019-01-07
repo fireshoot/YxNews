@@ -17,7 +17,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="http://localhost:8080/user/index.html" class="logo"><b><span>新闻页</span></b></a>
+        <a href="${pageContext.request.contextPath}/user/index.html" class="logo"><b><span>新闻页</span></b></a>
         <!--logo end-->
         <div class="top-menu">
             <ul class="pull-right top-menu">
@@ -26,12 +26,12 @@
                     User user = (User) session.getAttribute("user");
                     if (user != null) {
                 %>
-                <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>"
+                <li><a class="logout" href="${pageContext.request.contextPath}/user/Logout?userName=<%=user.getUserName()%>"
                 >Logout</a></li>
                 <%
                 } else {
                 %>
-                <li><a class="logout" href="http://localhost:8080/user/adminLogin.html">ToLogin</a></li>
+                <li><a class="logout" href="${pageContext.request.contextPath}/user/adminLogin.html">ToLogin</a></li>
                 <%
                     }
                 %>
@@ -46,7 +46,7 @@
         <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none;">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu" id="nav-accordion">
-                <p class="centered"><a href="profile.html">
+                <p class="centered"><a href="">
                     <%
                         if (user != null) {/*说明已登录*/
                     %>
@@ -87,19 +87,19 @@
                         <span class="dcjq-icon"></span></a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="http://localhost:8080/new/commentlist.html" class="dcjq-parent">
+                    <a href="${pageContext.request.contextPath}/new/commentlist.html" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>评论列表</span>
                         <span class="dcjq-icon"></span></a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="http://localhost:8080/new/userlist.html" class="dcjq-parent">
+                    <a href="${pageContext.request.contextPath}/new/userlist.html" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>用户列表</span>
                         <span class="dcjq-icon"></span></a>
                 </li>
                 <li class="sub-menu dcjq-parent-li">
-                    <a href="http://localhost:8080/new/editor.html?index=2" class="dcjq-parent">
+                    <a href="${pageContext.request.contextPath}/new/editor.html?index=2" class="dcjq-parent">
                         <i class="fa fa-desktop"></i>
                         <span>添加文章</span>
                         <span class="dcjq-icon"></span></a>

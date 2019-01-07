@@ -60,7 +60,7 @@
             %>
             <h4>欢迎用户<%=user.getUserName()%>
                 <ul class="pull-right top-menu">
-                    <li><a class="logout" href="http://localhost:8080/user/Logout?userName=<%=user.getUserName()%>">Logout</a>
+                    <li><a class="logout" href="${pageContext.request.contextPath}/user/Logout?userName=<%=user.getUserName()%>">Logout</a>
                     </li>
                 </ul>
             </h4>
@@ -70,7 +70,7 @@
             <h4>
                 <div>未登录</div>
                 <ul class="pull-right top-menu">
-                    <li><a class="logout" href="http://localhost:8080/user/login1.html">ToLogin</a></li>
+                    <li><a class="logout" href="${pageContext.request.contextPath}/user/login1.html">ToLogin</a></li>
                 </ul>
             </h4>
             <%
@@ -81,9 +81,9 @@
             <div class="top-menu">
                 <ul>
                     <li><a class="active" href="#">新闻主页</a></li>
-                    <li><a href="https://www.cnblogs.com/yangdagaoge/">About Us</a></li>
-                    <li><a href="https://github.com/fireshoot/YxNews">Services</a></li>
-                    <li><a href="http://localhost:8080/user/center.html">个人中心</a></li>
+                    <li><a href="https://www.cnblogs.com/yangdagaoge/">项目日记</a></li>
+                    <li><a href="https://github.com/fireshoot/YxNews">项目地址</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/center.html">个人中心</a></li>
                 </ul>
             </div>
             <!-- script for menu -->
@@ -154,10 +154,10 @@
                         <h2 class="with-line">与我相关</h2>
                     </header>
                     <ul>
-                        <li><a href="http://localhost:8080/new/editor.html?index=1">添加文章</a></li>
-                        <li><a href="http://localhost:8080/user/center.html">我发表的文章</a></li>
-                        <li><a href="http://localhost:8080/user/center.html">我的评论</a></li>
-                        <li><a href="http://localhost:8080/user/center.html">我的消息</a></li>
+                        <li><a href="${pageContext.request.contextPath}/new/editor.html?index=1">添加文章</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/center.html">我发表的文章</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/center.html">我的评论</a></li>
+                        <li><a href="${pageContext.request.contextPath}/user/center.html">我的消息</a></li>
                     </ul>
                 </div>
 

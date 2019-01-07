@@ -71,8 +71,8 @@
             <h2 class="with-line">与我相关</h2>
         </header>
         <ul>
-            <li style="float: left"><a href="http://localhost:8080/user/index.html">首页</a></li>
-            <li style="float: left"><a href="http://localhost:8080/new/editor.htmlindex=1">添加文章</a></li>
+            <li style="float: left"><a href="${pageContext.request.contextPath}/user/index.html">首页</a></li>
+            <li style="float: left"><a href="${pageContext.request.contextPath}/new/editor.html?index=1">添加文章</a></li>
             <li style="float: left"><a href="#">我发表的文章和评论</a></li>
         </ul>
     </div>
