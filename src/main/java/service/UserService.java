@@ -18,8 +18,6 @@ public interface UserService {
     * */
     ResgisterState register(User user);
 
-
-
     /*
     * 根据用户名验证用户是否存在
     * */

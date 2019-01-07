@@ -39,6 +39,7 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
+    //日志打印。
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -129,8 +130,8 @@ public class UserController {
      * */
     @PostMapping(value = "/toregister")
     public String toregister(User user, Model model) {
-        user.setCreateTime(new Date());
         logger.info("############yangxin专用日志###########  注册功能模块的前台传来的注册数据：" + user);
+        user.setCreateTime(new Date());
         User existUser = userService.selectByName(user.getUserName());
         if (existUser != null) {//说明昵称已经存在
             NewsResult<User> register = new NewsResult<User>(false, UserRegisterEnums.DBAEXIST.getStateInfo());
