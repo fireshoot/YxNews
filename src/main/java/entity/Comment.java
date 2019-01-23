@@ -17,7 +17,9 @@ public class Comment {
 
     private Date createTime;
 
+
     public Comment(long newId, long userId, String content) {
+
         this.newId = newId;
         this.userId = userId;
         this.content = content;

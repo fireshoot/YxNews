@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RedisDao redisDao;
 
+
     /*
      * 优化：1.添加事务注解和事务的配置，当注册异常时回滚和正常时的提交。
      *       2.自定义异常类，出现相应的错误，抛出异常回滚。
@@ -54,6 +55,7 @@ public class UserServiceImpl implements UserService {
         try {
             User redisUser = redisDao.getUser(redisKey, user.getUserName());
             if (redisUser == null) {
+
                 String res = redisDao.setUser(redisKey, user);
                 logger.info("############yangxin专用日志########### 注册功能模块的插入Redis数据返回值：" + res);
                 int insertCount = userDao.insertUser(user);
@@ -82,7 +84,6 @@ public class UserServiceImpl implements UserService {
     public User selectByName(String userName) {
         return userDao.queryByName(userName);
     }
-
     @Override
     public User login(String userName, String Password) {
         String password = getSalt(Password);
@@ -131,7 +132,7 @@ public class UserServiceImpl implements UserService {
         return DigestUtils.md5DigestAsHex(md5.getBytes());
     }
 
-    public void Logout(String UserName){
+    public void Logout(String UserName) {
         User u = (User) session.getAttribute("user");
         try {
             session.removeAttribute("user");
@@ -149,9 +150,9 @@ public class UserServiceImpl implements UserService {
 
     public void ForceLogout(String UserName) {
         User u = (User) session.getAttribute("user");
-        User logoutUser=userDao.queryByName(UserName);
+        User logoutUser = userDao.queryByName(UserName);
         try {
-            if(u.getUserType()==2)
+            if (u.getUserType() == 2)
                 session.removeAttribute("user");
             ServletContext application = session.getServletContext();
             @SuppressWarnings("unchecked")

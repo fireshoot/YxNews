@@ -16,15 +16,6 @@ public class ResgisterState {
 
     private User user;
 
-    @Override
-    public String toString() {
-        return "ResgisterState{" +
-                "userId=" + userId +
-                ", state=" + state +
-                ", stateInfo='" + stateInfo + '\'' +
-                ", user=" + user +
-                '}';
-    }
 
     public ResgisterState(long userId, UserRegisterEnums resgisterState) {
         this.userId = userId;
@@ -71,4 +62,16 @@ public class ResgisterState {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "ResgisterState{" +
+                "userId=" + userId +
+                ", state=" + state +
+                ", stateInfo='" + stateInfo + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+
 }

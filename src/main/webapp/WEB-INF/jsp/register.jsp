@@ -23,7 +23,7 @@
                             <label class="col-sm-2 col-sm-2 control-label">用户名(昵称)</label>
                             <div class="col-sm-10">
                                 <input class="form-control" id="username" name="userName"
-                                       onblur="checkname()" <%--id="focusedInput"--%> type="text">
+                                       onblur="checkname()"  type="text">
                                 <span id="tip_name" style="color: rebeccapurple"></span>
                             </div>
 

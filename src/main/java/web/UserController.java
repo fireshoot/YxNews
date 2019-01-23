@@ -131,13 +131,13 @@ public class UserController {
     @PostMapping(value = "/toregister")
     public String toregister(User user, Model model) {
         logger.info("############yangxin专用日志###########  注册功能模块的前台传来的注册数据：" + user);
-        user.setCreateTime(new Date());
         User existUser = userService.selectByName(user.getUserName());
         if (existUser != null) {//说明昵称已经存在
             NewsResult<User> register = new NewsResult<User>(false, UserRegisterEnums.DBAEXIST.getStateInfo());
             model.addAttribute("result", register);
             return "register";
         } else {
+            user.setCreateTime(new Date());
             ResgisterState res = userService.register(user);
             if (res.getState() != 1) {//表示不成功
                 NewsResult<User> register = new NewsResult<User>(false, res.getStateInfo());
