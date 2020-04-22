@@ -1,5 +1,7 @@
 # YxNews
 
+<font color="red">警告，我发现我的项目在咸鱼上被人拿出来卖，这并不是本人操作，如果有小哥哥小姐姐被骗，及时告诉我和举报。</font>
+
 # YxNews
 说明
 1.	基于spring、springmvc、mybatis的新闻发布系统，包含有前台新闻展示、用户操作功能，后台管理系统。
