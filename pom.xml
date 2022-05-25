@@ -112,7 +112,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>5.1.1.RELEASE</version><!-- 5.0.2 -->
+      <version>5.2.22.RELEASE</version><!-- 5.0.2 -->
     </dependency>
 
 
