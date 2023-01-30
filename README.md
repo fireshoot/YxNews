@@ -11,6 +11,7 @@
 6.	或者你有更好的建议可以在Issue中提起，我个人擅长于java开发，对前端做得比较烂。
 7.	我对此的博客地址：https://www.cnblogs.com/yangdagaoge/category/1374971.html
 
+--- 这个项目是我大学的时候做的，采用的是springmvc+jsp比较古老的玩意写的，没啥大的价值，有啥问题可以+Q 823721670 咨询，不过还是建议你不要参考这个。如果你需要相关毕业设计或者课程设计的指导，也可联系我。
 
 # 目录结构说明
 	![Alt text](https://github.com/fireshoot/YxNews/blob/master/imagesTest/14.png)
